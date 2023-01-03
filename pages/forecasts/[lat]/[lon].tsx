@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import {GetServerSidePropsContext, GetServerSideProps, InferGetServerSidePropsType, NextPage} from 'next'
 import { Inter } from '@next/font/google'
-import styles from '../../../styles/Home.module.css'
+import styles from '@Styles/[lon].module.css'
 const inter = Inter({ subsets: ['latin'] })
 import Link from 'next/link'
 
-import {ForeCasts, ForeCast} from "../../../lib/getWeather";
+import {ForeCasts, ForeCast} from "@Lib/getWeather";
 import {ParsedUrlQuery} from "querystring";
 // interface ParsedUrlQuery extends NodeJS.Dict<string | string[]> {}
 

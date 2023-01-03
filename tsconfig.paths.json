@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@Components/*": ["src/components/*"],
+      "@Contexts/*": ["src/contexts/*"],
+      "@Constants/*": ["src/constants/*"],
+      "@Cypress/*": ["cypress/*"],
+      "@Hooks/*": ["src/hooks/*"],
+      "@Lib/*": ["lib/*"],
+      "@Pages/*": ["pages/*"],
+      "@Routes/*": ["src/routes/*"],
+      "@Services/*": ["src/services/*"],
+      "@Styles/*": ["styles/*"],
+      "@Svg/*": ["src/svg/*"],
+      "@Test/*": ["test/*"],
+      "@Types": ["src/types"],
+      "@Types/*": ["src/types/*"],
+      "@Utils/*": ["utils/*"]
+    }
+  }
+}

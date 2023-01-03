@@ -3,7 +3,7 @@ import {NextPage} from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+import styles from '@Styles/Home.module.css'
 const inter = Inter({ subsets: ['latin'] })
 
 const Home: NextPage = () => {
