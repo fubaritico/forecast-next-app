@@ -1,25 +1,50 @@
 import Head from 'next/head'
 import {
-    GetServerSidePropsContext,
-    GetServerSideProps,
-    InferGetServerSidePropsType,
     NextPage,
+    GetStaticProps, GetStaticPropsContext, InferGetStaticPropsType
 } from 'next'
 import { Inter } from '@next/font/google'
 import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
-import {SSR_WeatherAPI} from "@Api";
-import {ForeCastsResponse, ForeCast} from "@Requests/getWeather";
+import getWeather, {ForeCastsResponse, ForeCast, GetWeatherParams} from "@Requests/getWeather";
 import styles from '@Styles/[lon].module.css';
 
 type ForeCastsProps = {
     forecasts: ForeCastsResponse
 }
+export async function getStaticPaths() {
+    const params: GetWeatherParams[] = [
+        {
+            lat: '36',
+            lon: '46'
+        },
+        {
+            lat: '48',
+            lon: '57'
+        },
+    ];
 
-export const getServerSideProps: GetServerSideProps<ForeCastsProps> = async (context: GetServerSidePropsContext) => {
-    const response: Response = await SSR_WeatherAPI.default(context.params)
-    const forecasts = await response.json() as unknown as ForeCastsResponse
+    return {
+        paths: params.map(({lat, lon}) => {
+            return {
+                params: {
+                    lat,
+                    lon,
+                },
+            };
+        }),
+        fallback: false,
+    };
+}
+/**
+ * Instead of fetching your `/api` route you can call the same
+ * function directly in `getStaticProps`
+ * @param context
+ */
+export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
+    const response = await getWeather(context.params as GetWeatherParams)
+    const forecasts = response.data
 
     return {
         props: {
@@ -28,9 +53,9 @@ export const getServerSideProps: GetServerSideProps<ForeCastsProps> = async (con
     }
 }
 
-const ForeCasts: NextPage<ForeCastsProps> = ({ forecasts }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const StaticForeCasts: NextPage<ForeCastsProps> = ({ forecasts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
-    // console.log('ForeCasts::render - forecasts: ', forecasts)
+    // console.log('StaticForeCasts::render - forecasts: ', forecasts)
 
     return (
         <>
@@ -70,4 +95,4 @@ const ForeCasts: NextPage<ForeCastsProps> = ({ forecasts }: InferGetServerSidePr
     )
 }
 
-export default ForeCasts
+export default StaticForeCasts

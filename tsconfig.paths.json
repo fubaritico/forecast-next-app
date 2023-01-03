@@ -2,12 +2,14 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@Api": ["api"],
+      "@Api/*": ["api/*"],
       "@Components/*": ["src/components/*"],
       "@Contexts/*": ["src/contexts/*"],
       "@Constants/*": ["src/constants/*"],
       "@Cypress/*": ["cypress/*"],
       "@Hooks/*": ["src/hooks/*"],
-      "@Lib/*": ["lib/*"],
+      "@Requests/*": ["api/requests/*"],
       "@Pages/*": ["pages/*"],
       "@Routes/*": ["src/routes/*"],
       "@Services/*": ["src/services/*"],
@@ -16,6 +18,7 @@
       "@Test/*": ["test/*"],
       "@Types": ["src/types"],
       "@Types/*": ["src/types/*"],
+      "@Utils": ["utils"],
       "@Utils/*": ["utils/*"]
     }
   }
