@@ -1,11 +1,13 @@
 import Head from 'next/head'
+import {NextPage} from 'next'
+import Link from 'next/link'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
-
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+const Home: NextPage = () => {
+
   return (
     <>
       <Head>
@@ -20,6 +22,7 @@ export default function Home() {
             Get started by editing&nbsp;
             <code className={styles.code}>pages/index.tsx</code>
           </p>
+          <Link href="/forecasts/35/45">See Forecasts ofr 35 degrees of latitude & 45 degrees of longitude</Link>
           <div>
             <a
               href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
@@ -121,3 +124,5 @@ export default function Home() {
     </>
   )
 }
+
+export default Home
