@@ -4,11 +4,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@Styles/Home.module.css'
+
 const inter = Inter({ subsets: ['latin'] })
 
-const Home: NextPage = () => {
-
-  return (
+const Home: NextPage = () => (
     <>
       <Head>
         <title>Create Next App</title>
@@ -123,6 +122,5 @@ const Home: NextPage = () => {
       </main>
     </>
   )
-}
 
 export default Home

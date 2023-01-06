@@ -2,24 +2,25 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@Api": ["api"],
-      "@Api/*": ["api/*"],
+      "@Api": ["src/api"],
+      "@Api/*": ["src/api/*"],
       "@Components/*": ["src/components/*"],
       "@Contexts/*": ["src/contexts/*"],
       "@Constants/*": ["src/constants/*"],
-      "@Cypress/*": ["cypress/*"],
+      "@Cypress/*": ["src/cypress/*"],
       "@Hooks/*": ["src/hooks/*"],
-      "@Requests/*": ["api/requests/*"],
-      "@Pages/*": ["pages/*"],
+      "@Requests": ["src/api/requests"],
+      "@Requests/*": ["src/api/requests/*"],
+      "@Pages/*": ["src/pages/*"],
       "@Routes/*": ["src/routes/*"],
       "@Services/*": ["src/services/*"],
-      "@Styles/*": ["styles/*"],
+      "@Styles/*": ["src/styles/*"],
       "@Svg/*": ["src/svg/*"],
-      "@Test/*": ["test/*"],
+      "@Test/*": ["src/test/*"],
       "@Types": ["src/types"],
       "@Types/*": ["src/types/*"],
-      "@Utils": ["utils"],
-      "@Utils/*": ["utils/*"]
+      "@Utils": ["src/utils"],
+      "@Utils/*": ["src/utils/*"]
     }
   }
 }

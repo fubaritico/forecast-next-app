@@ -54,12 +54,12 @@ export type GetWeatherParams = {
     lon: string
 }
 
-export default async function getWeather( params: GetWeatherParams ): Promise<AxiosResponse<ForeCastsResponse, any>> {
+export default async function getWeather( params: GetWeatherParams ): Promise<AxiosResponse<ForeCastsResponse, unknown>> {
     const options = {
         method: 'GET',
         url: 'http://127.0.0.1:9000/api/weather/get',
         params,
     };
 
-    return await axios.request<ForeCastsResponse, AxiosResponse<ForeCastsResponse>>(options)
+    return axios.request<ForeCastsResponse, AxiosResponse<ForeCastsResponse>>(options)
 }
