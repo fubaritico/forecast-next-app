@@ -1,7 +1,9 @@
 {
-  "name": "my-typescript-next-app",
+  "name": "forecast-next-app",
   "version": "0.1.0",
   "private": true,
+  "keywords": ["react", "next", "node", "express", "forecast"],
+  "description": "Next project providing weather forecast through a panel and a detailed dashboard for any location",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
