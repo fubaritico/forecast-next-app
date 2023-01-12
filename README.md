@@ -34,3 +34,34 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## UX design
+
+#### Links
+
+- [Codepen for gradients](https://codepen.io/stefcot/pen/QWBGEQV)
+- [The Secret of Great Gradient](https://uxplanet.org/the-secret-of-great-gradient-2f2c49ef3968)
+- [Sky-inspired Weather App Concept](https://uxplanet.org/sky-inspired-weather-app-concept-4f1775ce4571)
+- [Using Vue.js To Create An Interactive Weather Dashboard With APIs](https://www.smashingmagazine.com/2019/02/interactive-weather-dashboard-api-vue-js/)
+
+## APIs
+
+Google Maps API key: `AIzaSyAq65YInKMUuOTLhrmCWz7ZoNhLmCfJxXY`
+
+### Google Maps 
+
+In this project, the Google example approach has been chosen,<br>
+install `npm i @googlemaps/react-wrapper`<br>
+and see: [https://developers.google.com/maps/documentation/javascript/react-map#react-wrapper](https://developers.google.com/maps/documentation/javascript/react-map#react-wrapper)
+
+#### Other solution
+install `npm i @googlemaps/js-api-loader`<br>
+and see: [3 gotchas of Google Maps API when used with Next.js and eslint](https://medium.com/web-dev-survey-from-kyoto/3-gotchas-of-google-maps-api-when-used-with-next-js-and-eslint-dba627c9657d)
+
+#### Links
+- [Next.js environment variables](https://nextjs.org/docs/basic-features/environment-variables)
+- [Google Maps Javascript API documentation](https://developers.google.com/maps/documentation/javascript/reference/)
+
+### WeatherBit
+
+See: [Field Decriptions](https://www.weatherbit.io/api/weather-current)

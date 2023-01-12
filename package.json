@@ -2,7 +2,13 @@
   "name": "forecast-next-app",
   "version": "0.1.0",
   "private": true,
-  "keywords": ["react", "next", "node", "express", "forecast"],
+  "keywords": [
+    "react",
+    "next",
+    "node",
+    "express",
+    "forecast"
+  ],
   "description": "Next project providing weather forecast through a panel and a detailed dashboard for any location",
   "scripts": {
     "dev": "next dev",
@@ -11,6 +17,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@googlemaps/react-wrapper": "^1.1.35",
     "@next/font": "13.1.1",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
@@ -18,9 +25,11 @@
     "axios": "^1.2.1",
     "next": "13.1.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "use-deep-compare-effect": "^1.8.1"
   },
   "devDependencies": {
+    "@types/googlemaps": "^3.43.3",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
     "eslint": "8.30.0",
