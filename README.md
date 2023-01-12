@@ -35,6 +35,19 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+## Contribution
+
+### Commits
+Conventional commitlinting is applied with Commitizen and others tools in this project.<br>
+Used packages:
+- Commitizen [https://commitizen-tools.github.io/commitizen/](https://commitizen-tools.github.io/commitizen/)
+- Commitlint [https://github.com/conventional-changelog/commitlint](https://github.com/conventional-changelog/commitlint)
+- Husky hooks [https://github.com/conventional-changelog/commitlint](https://github.com/conventional-changelog/commitlint)
+- Lint-staged [https://github.com/okonet/lint-staged](https://github.com/okonet/lint-staged)
+
+### Releases
+
+
 ## UX design
 
 #### Links
