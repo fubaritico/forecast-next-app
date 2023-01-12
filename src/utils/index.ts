@@ -1,4 +1,4 @@
-import {ParsedUrlQuery} from "querystring";
+import { ParsedUrlQuery } from 'querystring'
 
 export function doSomething() {}
 
@@ -7,13 +7,13 @@ export function doSomething() {}
  * @param params ParsedUrlQuery
  */
 export function getUrlSearchParams(params?: ParsedUrlQuery): URLSearchParams {
-    const urlSearchParams = new URLSearchParams()
+  const urlSearchParams = new URLSearchParams()
 
-    if(params) {
-        for (const prop in params) {
-            urlSearchParams.append(prop, params[prop] as string)
-        }
-    }
+  if (params) {
+    Object.keys(params).forEach((key) =>
+      urlSearchParams.append(key, params[key] as string)
+    )
+  }
 
-    return urlSearchParams
+  return urlSearchParams
 }

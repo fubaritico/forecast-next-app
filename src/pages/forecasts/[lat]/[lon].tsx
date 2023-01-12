@@ -10,7 +10,7 @@ import Link from 'next/link'
 import { SSR_WeatherAPI } from '@Api'
 import { ForeCastsResponse, ForeCast } from '@Requests/getWeather'
 import styles from '@Styles/[lon].module.css'
-import GoogleMapsWrapper from "@Components/GoogleMaps/GoogleMapsWrapper";
+import GoogleMapsWrapper from '@Components/GoogleMaps/GoogleMapsWrapper'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -44,7 +44,7 @@ const ForeCasts: NextPage<ForeCastsProps> = ({
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <main className={styles.main}>
-      <GoogleMapsWrapper/>
+      <GoogleMapsWrapper />
       <div className={styles.grid}>
         {forecasts.data?.map((f: ForeCast) => (
           <Link

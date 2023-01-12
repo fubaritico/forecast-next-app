@@ -45,8 +45,50 @@ Used packages:
 - Husky hooks [https://github.com/conventional-changelog/commitlint](https://github.com/conventional-changelog/commitlint)
 - Lint-staged [https://github.com/okonet/lint-staged](https://github.com/okonet/lint-staged)
 
+#### Commitlint
+
+Read the [documentation](https://github.com/conventional-changelog/commitlint/blob/master/README.md)
+
+#### Husky
+```sh
+# Install commitlint cli and conventional config
+npm install --save-dev @commitlint/{config-conventional,cli}
+# For Windows:
+npm install --save-dev @commitlint/config-conventional @commitlint/cli
+
+# Configure commitlint to use conventional config
+echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
+```
+
+To lint commits before they are created you can use Husky's commit-msg hook:
+```sh
+# Install Husky v6
+npm install husky --save-dev
+# or
+yarn add husky --dev
+
+# Activate hooks
+npx husky install
+# or
+yarn husky install
+```
+Add hook
+```sh
+npx husky add .husky/commit-msg  'npx --no -- commitlint --edit ${1}'
+```
+
+#### Git
+
+for my commit editing, I chose nano
+```sh
+git config --global core.editor nano
+```
+
+*_NOTE_*: All these installation process will probably be outdated based on the compatibility between packages
+
 ### Releases
 
+TODO
 
 ## UX design
 

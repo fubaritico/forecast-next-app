@@ -72,6 +72,7 @@ const StaticForeCasts: NextPage<ForeCastsProps> = ({
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <main className={styles.main}>
+      <div>test</div>
       <div className={styles.grid}>
         {forecasts.data?.map((f: ForeCast) => (
           <Link

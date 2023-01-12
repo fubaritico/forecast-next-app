@@ -1,11 +1,11 @@
-import {FC, PropsWithChildren, useRef, useState, useEffect} from "react";
-import useDeepCompareEffect from "use-deep-compare-effect";
+import { FC, PropsWithChildren, useRef, useState, useEffect } from 'react'
+import useDeepCompareEffect from 'use-deep-compare-effect'
 import styles from '@Styles/Map.module.css'
 
 interface MapProps extends google.maps.MapOptions {
-    style?: { [key: string]: string };
-    onClick?: (e: google.maps.MapMouseEvent) => void;
-    onIdle?: (map: google.maps.Map) => void;
+  style?: { [key: string]: string }
+  onClick?: (e: google.maps.MapMouseEvent) => void
+  onIdle?: (map: google.maps.Map) => void
 }
 const Map: FC<PropsWithChildren<MapProps>> = ({
   onClick,
@@ -14,42 +14,44 @@ const Map: FC<PropsWithChildren<MapProps>> = ({
   style,
   ...options
 }) => {
-    const ref = useRef<HTMLDivElement>(null);
-    const [map, setMap] = useState<google.maps.Map>();
+  const ref = useRef<HTMLDivElement>(null)
+  const [map, setMap] = useState<google.maps.Map>()
 
-    useDeepCompareEffect(() => {
-        if (map) {
-            map.setOptions(options);
-        }
-    }, [map, options]);
+  useDeepCompareEffect(() => {
+    if (map) {
+      map.setOptions(options)
+    }
+  }, [map, options])
 
+  useEffect(() => {
+    if (ref.current && !map) {
+      setMap(
+        new google.maps.Map(ref.current, {
+          center: { lat: -34, lng: 151 },
+          zoom: 8,
+        })
+      )
+    }
+  }, [ref, map])
 
-    useEffect(() => {
-        if (ref.current && !map) {
-            setMap(new google.maps.Map(ref.current, { center: {lat: -34, lng: 151}, zoom: 8}));
-        }
-    }, [ref, map]);
+  useEffect(() => {
+    if (map) {
+      google.maps.event.trigger(map, 'resize')
+      ;['click', 'idle'].forEach((eventName) =>
+        google.maps.event.clearListeners(map, eventName)
+      )
 
-    useEffect(() => {
-        if (map) {
-            google.maps.event.trigger(map, 'resize');
-            ["click", "idle"].forEach((eventName) =>
-                google.maps.event.clearListeners(map, eventName)
-            );
+      if (onClick) {
+        map.addListener('click', onClick)
+      }
 
-            if (onClick) {
-                map.addListener("click", onClick);
-            }
+      if (onIdle) {
+        map.addListener('idle', () => onIdle(map))
+      }
+    }
+  }, [map, onClick, onIdle])
 
-            if (onIdle) {
-                map.addListener("idle", () => onIdle(map));
-            }
-        }
-    }, [map, onClick, onIdle]);
-
-    return (
-        <div className={styles.map} ref={ref} style={style} />
-    )
-};
+  return <div className={styles.map} ref={ref} style={style} />
+}
 
 export default Map
