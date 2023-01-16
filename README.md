@@ -89,6 +89,7 @@ git config --global core.editor nano
 ### Releases
 
 TODO
+- Semantic release [https://github.com/semantic-release/git](https://github.com/semantic-release/git)
 
 ## UX design
 
