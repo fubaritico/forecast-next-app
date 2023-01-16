@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren, useRef, useState, useEffect } from 'react'
 import useDeepCompareEffect from 'use-deep-compare-effect'
-import styles from '@Styles/Map.module.css'
+import Default from './Map.styled'
 
 interface MapProps extends google.maps.MapOptions {
   style?: { [key: string]: string }
@@ -51,7 +51,7 @@ const Map: FC<PropsWithChildren<MapProps>> = ({
     }
   }, [map, onClick, onIdle])
 
-  return <div className={styles.map} ref={ref} style={style} />
+  return <Default ref={ref} style={style} />
 }
 
 export default Map

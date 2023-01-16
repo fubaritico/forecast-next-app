@@ -93,6 +93,11 @@ TODO
 
 ## UX design
 
+#### Styled Components
+
+- Useful link to integrate styled components in Next. As well font flashing issue. [See](https://dev.to/dharmi/adding-fonts-in-nextjs-local-fonts-along-with-styled-components-2cdd)
+- [styled components integration in Next.js](https://dev.to/dharmi/setting-up-styled-components-with-nextjs-952-3khf)
+
 #### Links
 
 - [Codepen for gradients](https://codepen.io/stefcot/pen/QWBGEQV)

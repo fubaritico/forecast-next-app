@@ -5,14 +5,12 @@ import {
   InferGetServerSidePropsType,
   NextPage,
 } from 'next'
-import { Inter } from '@next/font/google'
-import Link from 'next/link'
 import { SSR_WeatherAPI } from '@Api'
 import { ForeCastsResponse, ForeCast } from '@Requests/getWeather'
-import styles from '@Styles/[lon].module.css'
 import GoogleMapsWrapper from '@Components/GoogleMaps/GoogleMapsWrapper'
-
-const inter = Inter({ subsets: ['latin'] })
+import MainLayout from '@Layouts/MainLayout'
+import Grid from '@Components/Grid'
+import ClickableCard from '@Components/ClickableCard'
 
 type ForeCastsProps = {
   forecasts: ForeCastsResponse
@@ -34,8 +32,6 @@ export const getServerSideProps: GetServerSideProps<ForeCastsProps> = async (
 const ForeCasts: NextPage<ForeCastsProps> = ({
   forecasts,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => (
-  // console.log('ForeCasts::render - forecasts: ', forecasts)
-
   <>
     <Head>
       <title>Forecasts</title>
@@ -43,23 +39,20 @@ const ForeCasts: NextPage<ForeCastsProps> = ({
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <main className={styles.main}>
+    <MainLayout>
       <GoogleMapsWrapper />
-      <div className={styles.grid}>
+      <Grid>
         {forecasts.data?.map((f: ForeCast) => (
-          <Link
+          <ClickableCard
             key={f.ts}
             href={`/forecasts/${f.ts}`}
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>Wind direction: {f.wind_cdir}</h2>
-            <p className={inter.className}>Desc: {f.weather.description}</p>
-          </Link>
+            title={<>Wind direction: {f.wind_cdir}</>}
+            description={<>Desc: {f.weather.description}</>}
+            isNextLink
+          />
         ))}
-      </div>
-    </main>
+      </Grid>
+    </MainLayout>
   </>
 )
 
