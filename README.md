@@ -50,6 +50,7 @@ Used packages:
 Read the [documentation](https://github.com/conventional-changelog/commitlint/blob/master/README.md)
 
 #### Husky
+
 ```sh
 # Install commitlint cli and conventional config
 npm install --save-dev @commitlint/{config-conventional,cli}
@@ -61,6 +62,7 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
 ```
 
 To lint commits before they are created you can use Husky's commit-msg hook:
+
 ```sh
 # Install Husky v6
 npm install husky --save-dev
@@ -72,19 +74,39 @@ npx husky install
 # or
 yarn husky install
 ```
+
 Add hook
+
 ```sh
 npx husky add .husky/commit-msg  'npx --no -- commitlint --edit ${1}'
 ```
 
 #### Git
 
-for my commit editing, I chose nano
+for my commit editing, I chose nano.
+
 ```sh
 git config --global core.editor nano
 ```
 
-*_NOTE_*: All these installation process will probably be outdated based on the compatibility between packages
+*_NOTE_*: All these installation process will probably be outdated based on the compatibility between packages<br>
+
+For all possible type, scope and subject, go to [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/)
+
+```sh
+# type, subject
+fix: My awesome commit
+
+# Long description
+Some long description (100 chars max)
+
+# For change log (not mandatory)
+BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+
+Reviewed-by: Some colleague
+Refs: #123 (tickets)
+Closes: #123 (tickets)
+```
 
 ### Releases
 
@@ -97,8 +119,26 @@ TODO
 
 - Useful link to integrate styled components in Next. As well font flashing issue. [See](https://dev.to/dharmi/adding-fonts-in-nextjs-local-fonts-along-with-styled-components-2cdd)
 - [styled components integration in Next.js](https://dev.to/dharmi/setting-up-styled-components-with-nextjs-952-3khf)
+- Theme in next [https://www.jonathan-harrell.com/blog/system-based-theming-with-styled-components/](https://www.jonathan-harrell.com/blog/system-based-theming-with-styled-components/)
 
-#### Links
+#### Fonts
+
+- Next fonts API reference [https://nextjs.org/docs/api-reference/next/font](https://nextjs.org/docs/api-reference/next/font)
+- Google web font generator [https://gwfh.mranftl.com/fonts](https://gwfh.mranftl.com/fonts)
+- Load fonts in next [See](https://stackoverflow.com/questions/60841540/flash-of-unstyled-text-fout-on-reload-using-next-js-and-styled-components)
+
+#### Storybook (v6)
+
+Install Webpack 5 and plugins, edit your storybook config, typescript and other needs.<br>
+TODO: Storybook config exposes a Vite entry, replace webpack with Vite.
+
+- Approach for writing stories for Next.js [https://dev-yakuza.posstree.com/en/react/nextjs/storybook/start/](https://dev-yakuza.posstree.com/en/react/nextjs/storybook/start/)
+- Storybook with TypScript (webpack & vite) [https://stackoverflow.com/questions/66444895/how-to-resolve-aliases-in-storybook](https://stackoverflow.com/questions/66444895/how-to-resolve-aliases-in-storybook)
+- Decorators (v5 then v6) [https://github.com/storybookjs/storybook/issues/8531](https://github.com/storybookjs/storybook/issues/8531)
+- next/image decorator [https://dev.to/jonasmerlin/how-to-use-the-next-js-image-component-in-storybook-1415](https://dev.to/jonasmerlin/how-to-use-the-next-js-image-component-in-storybook-1415)
+- Mocks with MSW
+
+#### Miscellaneous Links
 
 - [Codepen for gradients](https://codepen.io/stefcot/pen/QWBGEQV)
 - [The Secret of Great Gradient](https://uxplanet.org/the-secret-of-great-gradient-2f2c49ef3968)
@@ -125,4 +165,14 @@ and see: [3 gotchas of Google Maps API when used with Next.js and eslint](https:
 
 ### WeatherBit
 
-See: [Field Decriptions](https://www.weatherbit.io/api/weather-current)
+See documentation: [Field Descriptions](https://www.weatherbit.io/api/weather-current)
+
+## Miscellaneous
+
+### TODO.md
+
+Conventions to manage issues & enhancements to implement: [on Github](https://github.com/todomd/todo.md)
+
+### CI/CD
+
+Simple continuous integration with CircleCI: [https://github.com/whoisryosuke/next-styled-storybook-starter](https://github.com/whoisryosuke/next-styled-storybook-starter)

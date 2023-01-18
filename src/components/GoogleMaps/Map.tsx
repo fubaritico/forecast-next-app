@@ -2,7 +2,7 @@ import { FC, PropsWithChildren, useRef, useState, useEffect } from 'react'
 import useDeepCompareEffect from 'use-deep-compare-effect'
 import Default from './Map.styled'
 
-interface MapProps extends google.maps.MapOptions {
+export interface MapProps extends google.maps.MapOptions {
   style?: { [key: string]: string }
   onClick?: (e: google.maps.MapMouseEvent) => void
   onIdle?: (map: google.maps.Map) => void
@@ -32,7 +32,7 @@ const Map: FC<PropsWithChildren<MapProps>> = ({
         })
       )
     }
-  }, [ref, map])
+  }, [ref, map, window.google.maps]) // window.google.maps has to be kept (storybook)
 
   useEffect(() => {
     if (map) {

@@ -8,6 +8,7 @@
       "@Contexts/*": ["src/contexts/*"],
       "@Constants/*": ["src/constants/*"],
       "@Cypress/*": ["src/cypress/*"],
+      "@Decorators/*": ["src/stories/decorators/*"],
       "@Hooks/*": ["src/hooks/*"],
       "@Layouts/*": ["src/components/layouts/*"],
       "@Pages/*": ["src/components/pages/*"],
