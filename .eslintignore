@@ -1,0 +1,4 @@
+/.storybook/
+/jest.config.js
+/jest.setup.js
+/jest.setup.afterEnv.js

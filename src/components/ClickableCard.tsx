@@ -16,7 +16,12 @@ const ClickableCard: FC<PropsWithChildren<ClickableCardProps>> = ({
   isExternalLink = false,
 }) =>
   isExternalLink ? (
-    <AnchorCard href={href} rel="noopener noreferrer" target="_blank">
+    <AnchorCard
+      href={href}
+      rel="noopener noreferrer"
+      target="_blank"
+      aria-label={typeof title === 'string' ? title : undefined}
+    >
       <h2>
         {title} <span>-&gt;</span>
       </h2>
@@ -27,6 +32,7 @@ const ClickableCard: FC<PropsWithChildren<ClickableCardProps>> = ({
       className="ClickableCard"
       href={href}
       rel="noopener noreferrer"
+      aria-label={typeof title === 'string' ? title : undefined}
     >
       <h2>
         {title} <span>-&gt;</span>
