@@ -145,6 +145,13 @@ TODO: Storybook config exposes a Vite entry, replace webpack with Vite.
 - [Sky-inspired Weather App Concept](https://uxplanet.org/sky-inspired-weather-app-concept-4f1775ce4571)
 - [Using Vue.js To Create An Interactive Weather Dashboard With APIs](https://www.smashingmagazine.com/2019/02/interactive-weather-dashboard-api-vue-js/)
 
+## TESTING
+
+### Mocking fucking SVGs in jest
+
+Due to jest rules in next/jest, all moduleNameMapperShit are not taken into account, so you have to do this work around:<br>
+[https://github.com/vercel/next.js/issues/35634#issuecomment-1080942525](https://github.com/vercel/next.js/issues/35634#issuecomment-1080942525)
+
 ## APIs
 
 Google Maps API key: `AIzaSyAq65YInKMUuOTLhrmCWz7ZoNhLmCfJxXY`

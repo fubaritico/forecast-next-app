@@ -3,10 +3,6 @@ import { PropsWithChildren } from 'react'
 
 export {}
 
-declare module '*.svg' {
-  const content: any
-}
-
 declare global {
   interface GlowColors {
     color1: string

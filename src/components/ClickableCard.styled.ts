@@ -16,19 +16,6 @@ const linkMixin = css`
     transition: transform 200ms;
   }
 
-  h2 {
-    font-weight: 600;
-    margin-bottom: 0.7rem;
-  }
-
-  p {
-    margin: 0;
-    opacity: 0.6;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    max-width: 30ch;
-  }
-
   /* Mobile */
   @media (max-width: 700px) {
     padding: 1rem 2.5rem;
