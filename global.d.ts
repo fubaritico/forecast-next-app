@@ -1,5 +1,4 @@
 import 'styled-components'
-import { PropsWithChildren } from 'react'
 
 export {}
 
@@ -53,21 +52,6 @@ declare global {
     cardRgb: string
     cardBorderRgb: string
   }
-
-  interface LayoutType {
-    pageProps?: CustomPageProps
-    page: ReactNode
-  }
-
-  interface CustomPageProps {
-    message: string
-  }
-
-  type PageWithLayout = NextPage<CustomPageProps> & {
-    getLayout: (props: LayoutType) => ReactNode
-  }
-
-  type LayoutPageProps = PropsWithChildren<{ pageProps?: CustomPageProps }>
 }
 
 declare module 'styled-components' {
