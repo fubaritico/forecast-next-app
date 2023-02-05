@@ -1,18 +1,19 @@
 import Head from 'next/head'
-import {
+import type {
   GetServerSidePropsContext,
   GetServerSideProps,
   InferGetServerSidePropsType,
-  NextPage,
 } from 'next'
+import type { NextPageWithLayout } from '@Routes/_app'
+import type { ForeCastsResponse, ForeCast } from '@Requests/getWeather'
 import { SSR_WeatherAPI } from '@Api'
-import { ForeCastsResponse, ForeCast } from '@Requests/getWeather'
 import GoogleMapsWrapper from '@Components/GoogleMaps/GoogleMapsWrapper'
 import MainLayout from '@Layouts/MainLayout'
 import Grid from '@Components/Grid'
 import ClickableCard from '@Components/ClickableCard'
 import Map from '@Components/GoogleMaps/Map'
 
+import { ReactElement } from 'react'
 import MapMouseEvent = google.maps.MapMouseEvent
 
 type ForeCastsProps = {
@@ -32,7 +33,7 @@ export const getServerSideProps: GetServerSideProps<ForeCastsProps> = async (
   }
 }
 
-const ForeCasts: NextPage<ForeCastsProps> = ({
+const ForeCasts: NextPageWithLayout<ForeCastsProps> = ({
   forecasts,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const onClickMap = (ev: MapMouseEvent) => {
@@ -53,25 +54,27 @@ const ForeCasts: NextPage<ForeCastsProps> = ({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <MainLayout>
-        <GoogleMapsWrapper
-          apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY as string}
-        >
-          <Map onClick={onClickMap} onIdle={onIdleMap} />
-        </GoogleMapsWrapper>
-        <Grid>
-          {forecasts.data?.map((f: ForeCast) => (
-            <ClickableCard
-              key={f.ts}
-              href={`/forecasts/${f.ts}`}
-              title={<>Wind direction: {f.wind_cdir}</>}
-              description={<>Desc: {f.weather.description}</>}
-              isExternalLink
-            />
-          ))}
-        </Grid>
-      </MainLayout>
+      <GoogleMapsWrapper
+        apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY as string}
+      >
+        <Map onClick={onClickMap} onIdle={onIdleMap} />
+      </GoogleMapsWrapper>
+      <Grid>
+        {forecasts.data?.map((f: ForeCast) => (
+          <ClickableCard
+            key={f.ts}
+            href={`/forecasts/${f.ts}`}
+            title={<>Wind direction: {f.wind_cdir}</>}
+            description={<>Desc: {f.weather.description}</>}
+            isExternalLink
+          />
+        ))}
+      </Grid>
     </>
   )
 }
 export default ForeCasts
+
+ForeCasts.getLayout = function getLayout(page: ReactElement) {
+  return <MainLayout>{page}</MainLayout>
+}

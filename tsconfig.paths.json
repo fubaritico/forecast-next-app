@@ -14,7 +14,7 @@
       "@Pages/*": ["src/components/pages/*"],
       "@Requests": ["src/api/requests"],
       "@Requests/*": ["src/api/requests/*"],
-      "@Routes/*": ["src/routes/*"],
+      "@Routes/*": ["src/pages/*"],
       "@Services/*": ["src/services/*"],
       "@Styles/*": ["src/styles/*"],
       "@Svg/*": ["src/svg/*"],
