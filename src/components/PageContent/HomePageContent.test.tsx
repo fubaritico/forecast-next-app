@@ -1,9 +1,9 @@
 import { composeStories } from '@storybook/testing-react'
 import { render, screen } from '@Utils/reactTestingLibrary'
 
-import * as HomePageStories from './HomePage.stories'
+import * as HomePageContentStories from './HomePageContent.stories'
 
-const { Default } = composeStories(HomePageStories)
+const { Default } = composeStories(HomePageContentStories)
 describe('HomePage', () => {
   it('should render and display Next.js logo', async () => {
     render(<Default />)

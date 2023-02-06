@@ -127,6 +127,14 @@ TODO
 - Google web font generator [https://gwfh.mranftl.com/fonts](https://gwfh.mranftl.com/fonts)
 - Load fonts in next [See](https://stackoverflow.com/questions/60841540/flash-of-unstyled-text-fout-on-reload-using-next-js-and-styled-components)
 
+#### Layout grid system
+
+- React grid system [https://www.npmjs.com/package/react-grid-system](https://www.npmjs.com/package/react-grid-system)
+- React grid system documentation [https://sealninja.github.io/react-grid-system/](https://sealninja.github.io/react-grid-system/)
+- React grid layout (top nocth version for industry) [Github site](https://github.com/react-grid-layout/react-grid-layout)
+- react-grid-layout example [Code sandbox 1](https://codesandbox.io/examples/package/react-grid-layout)
+- react-grid-layout example - Dashboard [Code sandbox dashboard](https://codesandbox.io/s/dashboard-39vxx)
+
 #### Storybook (v6)
 
 Install Webpack 5 and plugins, edit your storybook config, typescript and other needs.<br>
@@ -138,12 +146,18 @@ TODO: Storybook config exposes a Vite entry, replace webpack with Vite.
 - next/image decorator [https://dev.to/jonasmerlin/how-to-use-the-next-js-image-component-in-storybook-1415](https://dev.to/jonasmerlin/how-to-use-the-next-js-image-component-in-storybook-1415)
 - Mocks with MSW
 
-#### Miscellaneous Links
+#### Miscellaneous Links - the main inspiration
 
 - [Codepen for gradients](https://codepen.io/stefcot/pen/QWBGEQV)
 - [The Secret of Great Gradient](https://uxplanet.org/the-secret-of-great-gradient-2f2c49ef3968)
 - [Sky-inspired Weather App Concept](https://uxplanet.org/sky-inspired-weather-app-concept-4f1775ce4571)
 - [Using Vue.js To Create An Interactive Weather Dashboard With APIs](https://www.smashingmagazine.com/2019/02/interactive-weather-dashboard-api-vue-js/)
+
+#### The thing - color extraction
+- Fucking wicked tool online to extract image colors [https://10015.io/tools/image-color-extractor](https://10015.io/tools/image-color-extractor)
+- NPM package to do the trick of color image extraction [https://www.npmjs.com/package/extract-colors](https://www.npmjs.com/package/extract-colors)
+- Maybe more affordable [https://dev.to/producthackers/creating-a-color-palette-with-javascript-44ip](https://dev.to/producthackers/creating-a-color-palette-with-javascript-44ip)
+- And the key solution [https://github.com/Namide/extract-colors](https://github.com/Namide/extract-colors)
 
 ## TESTING
 

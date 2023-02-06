@@ -4,31 +4,29 @@ import type {
   GetServerSideProps,
   InferGetServerSidePropsType,
 } from 'next'
-import type { NextPageWithLayout } from '@Routes/_app'
-import type { ForeCastsResponse, ForeCast } from '@Requests/getWeather'
-import { SSR_WeatherAPI } from '@Api'
-import GoogleMapsWrapper from '@Components/GoogleMaps/GoogleMapsWrapper'
+import { SSR_WeatherAPI } from '@ApiRoutes'
 import MainLayout from '@Layouts/MainLayout'
-import Grid from '@Components/Grid'
-import ClickableCard from '@Components/ClickableCard'
+import GoogleMapsWrapper from '@Components/GoogleMaps/GoogleMapsWrapper'
+import Grid from '@Components/Grid/Grid'
+import ClickableCard from '@Components/ClickableCard/ClickableCard'
 import Map from '@Components/GoogleMaps/Map'
 
 import { ReactElement } from 'react'
 import MapMouseEvent = google.maps.MapMouseEvent
 
 type ForeCastsProps = {
-  forecasts: ForeCastsResponse
+  forecasts: GetCurrentDefaultObservationsResponse // For now will display 10 selected observations, not forecasts for a place
 }
 
 export const getServerSideProps: GetServerSideProps<ForeCastsProps> = async (
   context: GetServerSidePropsContext
 ) => {
-  const response: Response = await SSR_WeatherAPI.default(context.params)
-  const forecasts = (await response.json()) as unknown as ForeCastsResponse
+  const response: GetCurrentDefaultObservationsAxiosResponse =
+    await SSR_WeatherAPI.default(context.params as unknown as Coordinates)
 
   return {
     props: {
-      forecasts,
+      forecasts: response.data,
     },
   }
 }
@@ -60,12 +58,12 @@ const ForeCasts: NextPageWithLayout<ForeCastsProps> = ({
         <Map onClick={onClickMap} onIdle={onIdleMap} />
       </GoogleMapsWrapper>
       <Grid>
-        {forecasts.data?.map((f: ForeCast) => (
+        {forecasts.map((f: MappedObservation) => (
           <ClickableCard
-            key={f.ts}
-            href={`/forecasts/${f.ts}`}
-            title={<>Wind direction: {f.wind_cdir}</>}
-            description={<>Desc: {f.weather.description}</>}
+            key={f.cityName}
+            href={`/forecasts/${f.coordinates?.lat}/${f.coordinates?.lon}`}
+            title={f.cityName}
+            description={f.weatherDescription}
             isExternalLink
           />
         ))}
@@ -75,6 +73,4 @@ const ForeCasts: NextPageWithLayout<ForeCastsProps> = ({
 }
 export default ForeCasts
 
-ForeCasts.getLayout = function getLayout(page: ReactElement) {
-  return <MainLayout>{page}</MainLayout>
-}
+ForeCasts.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>

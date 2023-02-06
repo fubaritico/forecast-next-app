@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren, ReactNode } from 'react'
-import ForecastSmallView from '@Components/ForecastSmallView'
+import ForecastSmallView from '@Components/ForecastSmallView/ForecastSmallView'
 import { AnchorCard, NextLinkCard } from './ClickableCard.styled'
 
 // See what has been done for link or anchor

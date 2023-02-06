@@ -5,23 +5,18 @@ import type {
   InferGetStaticPropsType,
 } from 'next'
 import type { ReactElement } from 'react'
-import type { NextPageWithLayout } from '@Routes/_app'
-import getWeather, {
-  ForeCastsResponse,
-  ForeCast,
-  GetWeatherParams,
-} from '@Requests/getWeather'
+import { getCurrentDefaultObservations } from '@Requests/getCurrentDefaultObservations'
 import MainLayout from '@Layouts/MainLayout'
-import Grid from '@Components/Grid'
-import ClickableCard from '@Components/ClickableCard'
+import Grid from '@Components/Grid/Grid'
+import ClickableCard from '@Components/ClickableCard/ClickableCard'
 import GoogleMapsWrapper from '@Components/GoogleMaps/GoogleMapsWrapper'
 import Map from '@Components/GoogleMaps/Map'
 
 type ForeCastsProps = {
-  forecasts: ForeCastsResponse
+  forecasts: GetCurrentDefaultObservationsAxiosResponse // For now will display 8 selected observations, not forecasts for a place
 }
 export async function getStaticPaths() {
-  const params: GetWeatherParams[] = [
+  const params: Coordinates[] = [
     {
       lat: '36',
       lon: '46',
@@ -50,7 +45,9 @@ export async function getStaticPaths() {
 export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext
 ) => {
-  const response = await getWeather(context.params as GetWeatherParams)
+  const response = await getCurrentDefaultObservations(
+    context.params as unknown as Coordinates
+  )
   const forecasts = response.data
 
   return {
@@ -77,12 +74,12 @@ const StaticForeCasts: NextPageWithLayout<ForeCastsProps> = ({
       <Map />
     </GoogleMapsWrapper>
     <Grid>
-      {forecasts.data?.map((f: ForeCast) => (
+      {forecasts.map((f: MappedObservation) => (
         <ClickableCard
-          key={f.ts}
-          href={`/forecasts/${f.ts}`}
-          title={<>Wind direction: {f.wind_cdir}</>}
-          description={<>Desc: {f.weather.description}</>}
+          key={f.cityName}
+          href={`/forecasts/${f.coordinates?.lat}/${f.coordinates?.lon}`}
+          title={f.cityName}
+          description={f.weatherDescription}
           isExternalLink
         />
       ))}
@@ -92,6 +89,6 @@ const StaticForeCasts: NextPageWithLayout<ForeCastsProps> = ({
 
 export default StaticForeCasts
 
-StaticForeCasts.getLayout = function getLayout(page: ReactElement) {
-  return <MainLayout>{page}</MainLayout>
-}
+StaticForeCasts.getLayout = (page: ReactElement) => (
+  <MainLayout>{page}</MainLayout>
+)

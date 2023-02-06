@@ -1,6 +1,10 @@
 import { ParsedUrlQuery } from 'querystring'
+import { ReactElement } from 'react'
 
-export function doSomething() {}
+export const nestLayouts: NestedLayoutCallback =
+  (parent: GetLayoutCallback, child: GetLayoutCallback) =>
+  (page: ReactElement) =>
+    parent(child(page))
 
 /**
  * Issues when getting query parameters

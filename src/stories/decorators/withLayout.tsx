@@ -2,8 +2,8 @@
 import { PartialStoryFn } from '@storybook/csf'
 import { ReactFramework } from '@storybook/react'
 
-import Grid from '@Components/Grid'
-import MainLayout from '@Layouts/MainLayout'
+import Grid from '@Components/Grid/Grid'
+import MainLayout from '@Components/Layouts/MainLayout'
 import styled from 'styled-components'
 
 const PaddedContainer = styled.div`

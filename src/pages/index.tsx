@@ -1,10 +1,9 @@
 import type { ReactElement } from 'react'
 import Head from 'next/head'
-import HomePage from '@Pages/HomePage'
 import MainLayout from '@Layouts/MainLayout'
-import type { NextPageWithLayout } from '@Routes/_app'
+import HomePageContent from '@PageContent/HomePageContent'
 
-const Index: NextPageWithLayout = () => (
+const HomePage: NextPageWithLayout = () => (
   <>
     <Head>
       <title>Next project providing weather forecast</title>
@@ -15,12 +14,14 @@ const Index: NextPageWithLayout = () => (
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <HomePage />
+    <HomePageContent />
   </>
 )
 
-export default Index
+export const HomePageLayout = (page: ReactElement) => (
+  <MainLayout>{page}</MainLayout>
+)
 
-Index.getLayout = function getLayout(page: ReactElement) {
-  return <MainLayout>{page}</MainLayout>
-}
+HomePage.getLayout = HomePageLayout
+
+export default HomePage

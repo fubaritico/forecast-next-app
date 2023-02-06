@@ -1,8 +1,14 @@
+/// <reference types="api.d.ts" />
 import 'styled-components'
+import { ReactElement } from 'react'
+import { NextPage } from 'next'
+import { AxiosError } from 'axios'
 
 export {}
 
 declare global {
+  // STYLES: UX & THEME
+
   interface GlowColors {
     color1: string
     color2?: string
@@ -52,6 +58,28 @@ declare global {
     cardRgb: string
     cardBorderRgb: string
   }
+
+  // NEXT: LAYOUTS AND PAGES
+
+  type GetLayoutCallback = (page: ReactElement) => ReactElement
+
+  type NestedLayoutCallback = (
+    parent: GetLayoutCallback,
+    child: GetLayoutCallback
+  ) => GetLayoutCallback
+
+  type NextPageWithLayout<P = object, IP = P> = NextPage<P, IP> & {
+    getLayout?: GetLayoutCallback
+    getChildren?(): ReactElement[]
+  }
+
+  // API AXIOS RESPONSES
+
+  /** Contains a data object of type <i>GetCurrentDefaultObservationsResponse</i> */
+  type GetCurrentDefaultObservationsAxiosResponse = AxiosResponse<
+    GetCurrentDefaultObservationsResponse,
+    AxiosError
+  >
 }
 
 declare module 'styled-components' {

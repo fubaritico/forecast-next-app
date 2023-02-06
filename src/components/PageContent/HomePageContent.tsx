@@ -1,14 +1,14 @@
 import { FC, PropsWithChildren } from 'react'
-import Description from '@Components/Description'
 import Link from 'next/link'
-import VercelLogo from '@Components/VercelLogo'
-import Center from '@Components/Center'
-import Thirteen from '@Components/Thirteen'
-import Grid from '@Components/Grid'
-import ClickableCard from '@Components/ClickableCard'
-import { Code, NextLogo } from './HomePage.styled'
+import Description from '@Components/Description/Description'
+import VercelLogo from '@Components/VercelLogo/VercelLogo'
+import Center from '@Components/Center/Center'
+import Thirteen from '@Components/Thirteen/Thirteen'
+import Grid from '@Components/Grid/Grid'
+import ClickableCard from '@Components/ClickableCard/ClickableCard'
+import { Code, NextLogo } from './HomePageContent.styled'
 
-const HomePage: FC<PropsWithChildren> = () => (
+const HomePageContent: FC<PropsWithChildren> = () => (
   <>
     <Description>
       <p>
@@ -67,4 +67,4 @@ const HomePage: FC<PropsWithChildren> = () => (
   </>
 )
 
-export default HomePage
+export default HomePageContent

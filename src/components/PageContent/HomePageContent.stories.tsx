@@ -1,12 +1,14 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import HomePage from '@Pages/HomePage'
 import { withMainLayout } from '@Decorators/withLayout'
+import HomePageContent from './HomePageContent'
 
 export default {
   title: 'Pages/HomePage',
-  component: HomePage,
+  component: HomePageContent,
   decorators: [withMainLayout],
-} as ComponentMeta<typeof HomePage>
+} as ComponentMeta<typeof HomePageContent>
 
-export const Default: ComponentStory<typeof HomePage> = () => <HomePage />
+export const Default: ComponentStory<typeof HomePageContent> = () => (
+  <HomePageContent />
+)
