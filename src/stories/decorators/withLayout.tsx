@@ -5,6 +5,7 @@ import { ReactFramework } from '@storybook/react'
 import Grid from '@Components/Grid/Grid'
 import MainLayout from '@Components/Layouts/MainLayout'
 import styled from 'styled-components'
+import ThemeProvider from '@Styles/ThemeProvider'
 
 const PaddedContainer = styled.div`
   display: flex;
@@ -37,4 +38,13 @@ export const withMainLayout = (
   <MainLayout>
     <StoryFn {...context} />
   </MainLayout>
+)
+
+export const withTheme = (
+  StoryFn: PartialStoryFn<ReactFramework>,
+  context: JSX.IntrinsicAttributes
+) => (
+  <ThemeProvider>
+    <StoryFn {...context} />
+  </ThemeProvider>
 )

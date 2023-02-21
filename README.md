@@ -197,3 +197,7 @@ Conventions to manage issues & enhancements to implement: [on Github](https://gi
 ### CI/CD
 
 Simple continuous integration with CircleCI: [https://github.com/whoisryosuke/next-styled-storybook-starter](https://github.com/whoisryosuke/next-styled-storybook-starter)
+
+### Code documentation
+
+- TypeDoc [https://typedoc.org/tags/returns/](https://typedoc.org/tags/returns/)
