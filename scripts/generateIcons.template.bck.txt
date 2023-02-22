@@ -1,0 +1,105 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// For all changes please modify icons-generator/src/main/resources/web/groupIcons.template file first and regenerate.
+import { LazyIcon, LazyIconsGroup } from '@Components/designSystem/icons/icons.types'
+import { svgLazyLoader } from '@Utils/icons'
+
+const IdfmLogo = svgLazyLoader('cardsAndSubscriptions/idfm_logo')
+const IdfmLogoSimple = svgLazyLoader('cardsAndSubscriptions/idfm_logo_simple')
+const Grandvoyageur = svgLazyLoader('cardsAndSubscriptions/grandvoyageur')
+const GrandvoyageurLeclub = svgLazyLoader('cardsAndSubscriptions/grandvoyageur_leclub')
+const NavigoAnnual = svgLazyLoader('cardsAndSubscriptions/navigo_annual')
+const NavigoDay = svgLazyLoader('cardsAndSubscriptions/navigo_day')
+const NavigoMonth = svgLazyLoader('cardsAndSubscriptions/navigo_month')
+const NavigoWeek = svgLazyLoader('cardsAndSubscriptions/navigo_week')
+const PlaneTicket = svgLazyLoader('cardsAndSubscriptions/plane_ticket')
+const PlusTicket = svgLazyLoader('cardsAndSubscriptions/plus_ticket')
+const SubscriptionAdvantageCard = svgLazyLoader('cardsAndSubscriptions/subscription_advantage_card')
+const SubscriptionLibertyCard = svgLazyLoader('cardsAndSubscriptions/subscription_liberty_card')
+const SubscriptionMaxactifCard = svgLazyLoader('cardsAndSubscriptions/subscription_maxactif_card')
+const SubscriptionMaxjeuneCard = svgLazyLoader('cardsAndSubscriptions/subscription_maxjeune_card')
+const SubscriptionMaxseniorCard = svgLazyLoader('cardsAndSubscriptions/subscription_maxsenior_card')
+const SubscriptionTickets = svgLazyLoader('cardsAndSubscriptions/subscription_tickets')
+const YoungTicket = svgLazyLoader('cardsAndSubscriptions/young_ticket')
+
+const ALL_CARDS_AND_SUBSCRIPTIONS_ICONS = [
+  'idfm_logo',
+  'idfm_logo_simple',
+  'card_family',
+  'card_family_circle',
+  'card_liberty',
+  'card_liberty_circle',
+  'card_senior',
+  'card_senior_circle',
+  'card_weekend',
+  'card_weekend_circle',
+  'card_young',
+  'card_young_circle',
+  'grandvoyageur',
+  'grandvoyageur_leclub',
+  'navigo_annual',
+  'navigo_day',
+  'navigo_month',
+  'navigo_week',
+  'plane_ticket',
+  'plus_ticket',
+  'subscription_advantage_card',
+  'subscription_default',
+  'subscription_family_card',
+  'subscription_liberty_card',
+  'subscription_maxactif_card',
+  'subscription_maxjeune_card',
+  'subscription_maxsenior_card',
+  'subscription_senior_card',
+  'subscription_tickets',
+  'subscription_weekend',
+  'subscription_young_card',
+  'young_ticket',
+] as const
+export type CardsAndSubscriptionsIcon = typeof ALL_CARDS_AND_SUBSCRIPTIONS_ICONS[number]
+
+const isCardsAndSubscriptionsIcon = (
+  cardsAndSubscriptionsKey: string
+): cardsAndSubscriptionsKey is CardsAndSubscriptionsIcon =>
+  ALL_CARDS_AND_SUBSCRIPTIONS_ICONS.includes(cardsAndSubscriptionsKey as CardsAndSubscriptionsIcon)
+
+const ICONS: LazyIconsGroup<CardsAndSubscriptionsIcon> = {
+  idfm_logo: IdfmLogo,
+  idfm_logo_simple: IdfmLogoSimple,
+  card_family: SubscriptionAdvantageCard,
+  card_family_circle: SubscriptionAdvantageCard,
+  card_liberty: SubscriptionLibertyCard,
+  card_liberty_circle: SubscriptionLibertyCard,
+  card_senior: SubscriptionMaxseniorCard,
+  card_senior_circle: SubscriptionMaxseniorCard,
+  card_weekend: SubscriptionMaxactifCard,
+  card_weekend_circle: SubscriptionMaxactifCard,
+  card_young: SubscriptionMaxjeuneCard,
+  card_young_circle: SubscriptionMaxjeuneCard,
+  grandvoyageur: Grandvoyageur,
+  grandvoyageur_leclub: GrandvoyageurLeclub,
+  navigo_annual: NavigoAnnual,
+  navigo_day: NavigoDay,
+  navigo_month: NavigoMonth,
+  navigo_week: NavigoWeek,
+  plane_ticket: PlaneTicket,
+  plus_ticket: PlusTicket,
+  subscription_advantage_card: SubscriptionAdvantageCard,
+  subscription_default: SubscriptionAdvantageCard,
+  subscription_family_card: SubscriptionAdvantageCard,
+  subscription_liberty_card: SubscriptionLibertyCard,
+  subscription_maxactif_card: SubscriptionMaxactifCard,
+  subscription_maxjeune_card: SubscriptionMaxjeuneCard,
+  subscription_maxsenior_card: SubscriptionMaxseniorCard,
+  subscription_senior_card: SubscriptionMaxseniorCard,
+  subscription_tickets: SubscriptionTickets,
+  subscription_weekend: SubscriptionMaxactifCard,
+  subscription_young_card: SubscriptionMaxjeuneCard,
+  young_ticket: YoungTicket,
+}
+
+export const getCardsAndSubscriptionsIcon = (cardsAndSubscriptionsKey: string | undefined): LazyIcon | undefined =>
+  cardsAndSubscriptionsKey && isCardsAndSubscriptionsIcon(cardsAndSubscriptionsKey)
+    ? ICONS[cardsAndSubscriptionsKey]
+    : undefined
+
+export const getCardsAndSubscriptionsIcons = (): LazyIconsGroup<CardsAndSubscriptionsIcon> => ICONS

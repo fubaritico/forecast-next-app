@@ -166,6 +166,12 @@ TODO: Storybook config exposes a Vite entry, replace webpack with Vite.
 Due to jest rules in next/jest, all moduleNameMapperShit are not taken into account, so you have to do this work around:<br>
 [https://github.com/vercel/next.js/issues/35634#issuecomment-1080942525](https://github.com/vercel/next.js/issues/35634#issuecomment-1080942525)
 
+## React
+
+Loading SVGs in Next and React 18<br>
+- complicated:  [https://codesandbox.io/s/react-dynamic-svg-import-ts-forked-q7r0vk?file=/src/App.tsx](https://codesandbox.io/s/react-dynamic-svg-import-ts-forked-q7r0vk?file=/src/App.tsx)
+- simple: [https://ryanhutzley.medium.com/dynamic-svg-imports-in-create-react-app-d6d411f6d6c6](https://ryanhutzley.medium.com/dynamic-svg-imports-in-create-react-app-d6d411f6d6c6)
+
 ## APIs
 
 Google Maps API key: `AIzaSyAq65YInKMUuOTLhrmCWz7ZoNhLmCfJxXY`

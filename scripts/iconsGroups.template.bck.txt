@@ -1,0 +1,81 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// For all changes please modify icons-generator/src/main/resources/web/dsIcons.template file first and regenerate.
+import { IconId } from 'invictus-sdk-typescript'
+
+import { getAreaIcons } from './areaIcons'
+import { getCardsAndSubscriptionsIcons } from './cardsAndSubscriptionsIcons'
+import { getClassesIcons } from './classesIcons'
+import { getCommunicationIcons } from './communicationIcons'
+import { getCountryIcons } from './countryIcons'
+import { getDiversIcons } from './diversIcons'
+import { LazyIcon } from './icons.types'
+import { getLuggageIcons } from './luggageIcons'
+import { getMeaIcons } from './meaIcons'
+import { getMobilityIcons } from './mobilityIcons'
+import { getNativeIcons } from './nativeIcons'
+import { getNavigationAndActionIcons } from './navigationAndActionIcons'
+import { getPaymentCardIcons } from './paymentCardIcons'
+import { getPaymentIcons } from './paymentIcons'
+import { getPlacementIcons } from './placementIcons'
+import { getSatisfactionIcons } from './satisfactionIcons'
+import { getServicesOnBoardIcons } from './servicesOnBoardIcons'
+import { getSleepingIcons } from './sleepingIcons'
+import { getSocialNetworksIcons } from './socialNetworksIcons'
+import { getSupplierIcons } from './supplierIcons'
+import { getTrainsIcons } from './trainsIcons'
+import { getTransportsIcons } from './transportsIcons'
+import { getTypologyIcons } from './typologyIcons'
+import { getWalkIcons } from './walkIcons'
+
+const ICONS_GROUPS = {
+  Area: getAreaIcons,
+  CardsAndSubscriptions: getCardsAndSubscriptionsIcons,
+  Classes: getClassesIcons,
+  Communication: getCommunicationIcons,
+  Country: getCountryIcons,
+  Divers: getDiversIcons,
+  Luggage: getLuggageIcons,
+  MEA: getMeaIcons,
+  Mobility: getMobilityIcons,
+  Native: getNativeIcons,
+  NavigationAndAction: getNavigationAndActionIcons,
+  Payment: getPaymentIcons,
+  PaymentCard: getPaymentCardIcons,
+  Placement: getPlacementIcons,
+  Satisfaction: getSatisfactionIcons,
+  ServicesOnBoard: getServicesOnBoardIcons,
+  Sleeping: getSleepingIcons,
+  SocialNetworks: getSocialNetworksIcons,
+  Supplier: getSupplierIcons,
+  Transports: getTransportsIcons,
+  Typology: getTypologyIcons,
+  Walk: getWalkIcons,
+  Trains: getTrainsIcons,
+} as const
+
+export type IconsGroup = keyof typeof ICONS_GROUPS
+
+const isIconsGroup = (iconsGroupKey: string): iconsGroupKey is IconsGroup =>
+  (Object.keys(ICONS_GROUPS) as IconsGroup[]).includes(iconsGroupKey as IconsGroup)
+
+const isIconOfIconsGroup = (
+  iconKey: string,
+  iconsGroup: ReturnType<typeof ICONS_GROUPS[IconsGroup]>
+): iconKey is keyof typeof iconsGroup =>
+  (Object.keys(iconsGroup) as (keyof typeof iconsGroup)[]).includes(iconKey as keyof typeof iconsGroup)
+
+export const getDsIcons = (
+  iconsGroupKey: string | undefined
+): ReturnType<typeof ICONS_GROUPS[IconsGroup]> | undefined =>
+  iconsGroupKey && isIconsGroup(iconsGroupKey) ? ICONS_GROUPS[iconsGroupKey]() : undefined
+
+export const getDsIcon = (iconId: IconId | undefined): LazyIcon | undefined => {
+  if (iconId) {
+    const {  iconGroupName: groupName, iconName } = iconId
+    const iconsGroup = getDsIcons(groupName)
+
+    return iconsGroup && isIconOfIconsGroup(iconName, iconsGroup) ? iconsGroup[iconName] : undefined
+  }
+
+  return undefined
+}

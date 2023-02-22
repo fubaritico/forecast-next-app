@@ -33,6 +33,14 @@ const Theme: DefaultTheme = {
     calloutBorderRgb: Colors.rgbLightGrey1,
     cardRgb: Colors.rgbLightGrey2,
     cardBorderRgb: Colors.rgbMediumGrey1,
+    icons: {
+      iconGridTitleColorRgb: Colors.rgbVeryDarkBlue1,
+      iconContainerBdrRgb: Colors.rgbLightGrey2,
+      iconPlaceHolderBgRgb: Colors.rgbVeryDarkBlue1,
+      iconFill: Colors.white,
+      iconeNameBgRgb: Colors.rgbLightGrey1,
+      iconeNameColor: Colors.white,
+    },
   },
   dark: {
     maxWidth: '1100px',
@@ -55,6 +63,14 @@ const Theme: DefaultTheme = {
     calloutBorderRgb: Colors.rgbMediumGrey2,
     cardRgb: Colors.rgbMediumGrey3,
     cardBorderRgb: Colors.rgbVeryLightGrey5,
+    icons: {
+      iconGridTitleColorRgb: Colors.rgbLightGrey1,
+      iconContainerBdrRgb: Colors.rgbMediumGrey3,
+      iconPlaceHolderBgRgb: Colors.rgbLightGrey1,
+      iconFill: Colors.white,
+      iconeNameBgRgb: Colors.rgbMediumGrey3,
+      iconeNameColor: Colors.white,
+    },
   },
 }
 

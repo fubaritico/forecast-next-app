@@ -23,7 +23,8 @@
     "storybook": "start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook -s ./public",
     "test": "jest --verbose",
-    "test:coverage": "npm run test -- --coverage --watchAll=false"
+    "test:coverage": "npm run test -- --coverage --watchAll=false",
+    "icons": "node ./scripts/generateIcons.mjs"
   },
   "dependencies": {
     "@googlemaps/react-wrapper": "^1.1.35",
@@ -37,6 +38,7 @@
     "@storybook/react": "^6.5.15",
     "apexcharts": "^3.37.0",
     "axios": "^1.2.1",
+    "handlebars": "^4.7.7",
     "next": "13.1.1",
     "react": "18.2.0",
     "react-apexcharts": "^1.4.0",
@@ -93,6 +95,7 @@
     "jest-environment-jsdom": "^29.3.1",
     "lint-staged": "^13.1.0",
     "prettier": "^2.8.1",
+    "ts-node": "^10.9.1",
     "tsconfig-paths-jest-mapper": "^1.4.0",
     "tsconfig-paths-webpack-plugin": "^4.0.0",
     "typescript": "4.9.4",

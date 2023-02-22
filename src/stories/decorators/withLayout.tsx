@@ -11,6 +11,7 @@ const PaddedContainer = styled.div`
   display: flex;
   padding: 2rem;
   min-height: 100vh;
+  flex-flow: row wrap;
 `
 
 export const withPadding = (

@@ -29,10 +29,10 @@ const jestConfig = async () => {
   const nextJestConfig = await createJestConfig(customJestConfig)()
   // delete nextJestConfig.testMatch
 
-  console.log(
-    '+--------------------------------------------------------> nextJestConfig ',
-    nextJestConfig
-  )
+  // console.log(
+  //   '+--------------------------------------------------------> nextJestConfig ',
+  //   nextJestConfig
+  // )
 
   return {
     ...nextJestConfig,

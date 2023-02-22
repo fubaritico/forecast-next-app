@@ -1,0 +1,42 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// For all changes please modify scripts/iconsGroup.template.txt file first and regenerate.
+import svgLazyLoader from '@Utils/icons'
+
+{{#each icons}}
+const {{capitalizeFirstLetter (removeExtension "svg" this)}} = svgLazyLoader('{{../path}}{{#if ../path}}/{{/if}}{{this}}')
+{{/each}}
+
+export const ALL_{{toUpperCase iconGroupName}}_ICONS = [
+{{#each icons}}
+  '{{removeExtension "svg" this}}',
+{{/each}}
+] as const
+
+export type {{capitalizeFirstLetter (removeUnderscores iconGroupName)}}Icon = typeof ALL_{{toUpperCase iconGroupName}}_ICONS[number]
+
+const is{{capitalizeFirstLetter (removeUnderscores iconGroupName)}}Icon = (
+  {{removeUnderscores iconGroupName}}IconKey: string
+): {{removeUnderscores iconGroupName}}IconKey is {{capitalizeFirstLetter (removeUnderscores iconGroupName)}}Icon =>
+  ALL_{{toUpperCase iconGroupName}}_ICONS.includes({{removeUnderscores iconGroupName}}IconKey as {{capitalizeFirstLetter (removeUnderscores iconGroupName)}}Icon)
+
+const ICONS: LazyIconsGroup<{{capitalizeFirstLetter (removeUnderscores iconGroupName)}}Icon> = {
+{{#each icons}}
+  {{removeExtension "svg" this}}: {{capitalizeFirstLetter (removeExtension "svg" this)}},
+{{/each}}
+}
+
+/**
+ * Will fetch and load one icon by providing its name, return undefined if icon is not found
+ * @param {string | undefined} {{removeUnderscores iconGroupName}}Key the icon component
+ * @returns LazyIcon | undefined
+ */
+export const get{{capitalizeFirstLetter (removeUnderscores iconGroupName)}}Icon = ({{removeUnderscores iconGroupName}}Key: string | undefined): LazyIcon | undefined =>
+  {{removeUnderscores iconGroupName}}Key && is{{capitalizeFirstLetter (removeUnderscores iconGroupName)}}Icon({{removeUnderscores iconGroupName}}Key)
+    ? ICONS[{{removeUnderscores iconGroupName}}Key]
+    : undefined
+
+/**
+ * Will return all icons components of the icon group stored in an object
+ * @returns LazyIconsGroup<{{capitalizeFirstLetter (removeUnderscores iconGroupName)}}Icon>
+ */
+export const get{{capitalizeFirstLetter (removeUnderscores iconGroupName)}}Icons = (): LazyIconsGroup<{{capitalizeFirstLetter (removeUnderscores iconGroupName)}}Icon> => ICONS

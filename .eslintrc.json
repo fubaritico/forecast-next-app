@@ -1,7 +1,7 @@
 {
   "plugins": ["@typescript-eslint", "jsx-a11y"],
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": ["./tsconfig.json"]
   },
   "extends": [
     "next/core-web-vitals",
@@ -37,6 +37,21 @@
             }
           }
         ]
+      }
+    }, {
+      "files": [".mjs"],
+      "parserOptions": {
+        "project": null
+      },
+      "rules": {
+        "@typescript-eslint/naming-convention": [
+          "warn",
+          {
+            "selector": "variable",
+            "format": ["camelCase"]
+          }
+        ],
+        "no-underscore-dangle": 0
       }
     }
   ]

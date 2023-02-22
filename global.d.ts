@@ -1,10 +1,15 @@
 /// <reference types="api.d.ts" />
 import 'styled-components'
-import { ReactElement } from 'react'
+import { SVGProps, ReactElement, FC } from 'react'
 import { NextPage } from 'next'
 import { AxiosError } from 'axios'
 
 export {}
+/*
+declare module '*.svg' {
+  const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>
+  export default content
+} */
 
 declare global {
   // STYLES: UX & THEME
@@ -41,6 +46,15 @@ declare global {
     white: string
   }
 
+  interface IconsTheme {
+    iconGridTitleColorRgb: string
+    iconContainerBdrRgb: string
+    iconPlaceHolderBgRgb: string
+    iconFill: string
+    iconeNameBgRgb: string
+    iconeNameColor: string
+  }
+
   interface IThemeProps {
     maxWidth: string
     borderRadius: string
@@ -57,6 +71,7 @@ declare global {
     calloutBorderRgb: string
     cardRgb: string
     cardBorderRgb: string
+    icons: IconsTheme
   }
 
   // NEXT: LAYOUTS AND PAGES
@@ -80,6 +95,22 @@ declare global {
     GetCurrentDefaultObservationsResponse,
     AxiosError
   >
+
+  // DYNAMICALLY DISPLAYED ICONS
+
+  export type LazyIconProps = PropsWithRef<SVGProps<SVGSVGElement>>
+
+  export type LazyIcon = FC<LazyIconProps>
+
+  export type LazyIconsGroup<IconType extends string> = Record<
+    IconType,
+    LazyIcon
+  >
+
+  export type IconID = {
+    iconGroupName: string
+    iconName: string
+  }
 }
 
 declare module 'styled-components' {

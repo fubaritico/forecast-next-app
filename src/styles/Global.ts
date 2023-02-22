@@ -38,6 +38,16 @@ const lightValues = css`
   --callout-border-rgb: ${({ theme }) => theme.light.calloutBorderRgb};
   --card-rgb: ${({ theme }) => theme.light.cardRgb};
   --card-border-rgb: ${({ theme }) => theme.light.cardBorderRgb};
+
+  --icon-grid-title-color-rgb: ${({ theme }) =>
+    theme.light.icons.iconGridTitleColorRgb};
+  --icon-container-border-rgb: ${({ theme }) =>
+    theme.light.icons.iconContainerBdrRgb};
+  --icon-name-bg-rgb: ${({ theme }) => theme.light.icons.iconeNameBgRgb};
+  --icon-fill: ${({ theme }) => theme.light.icons.iconFill};
+  --icon-name-color: ${({ theme }) => theme.light.icons.iconeNameColor};
+  --icon-placeholder-rgb: ${({ theme }) =>
+    theme.light.icons.iconPlaceHolderBgRgb};
 `
 
 // set up dark theme CSS variables
@@ -75,20 +85,35 @@ const darkValues = css`
   --callout-border-rgb: ${({ theme }) => theme.dark.calloutBorderRgb};
   --card-rgb: ${({ theme }) => theme.dark.cardRgb};
   --card-border-rgb: ${({ theme }) => theme.dark.cardBorderRgb};
+
+  --icon-grid-title-color-rgb: ${({ theme }) =>
+    theme.dark.icons.iconGridTitleColorRgb};
+  --icon-container-border-rgb: ${({ theme }) =>
+    theme.dark.icons.iconContainerBdrRgb};
+  --icon-name-bg-rgb: ${({ theme }) => theme.dark.icons.iconeNameBgRgb};
+  --icon-fill: ${({ theme }) => theme.dark.icons.iconFill};
+  --icon-name-color: ${({ theme }) => theme.dark.icons.iconeNameColor};
+  --icon-placeholder-rgb: ${({ theme }) =>
+    theme.dark.icons.iconPlaceHolderBgRgb};
 `
 
 export default createGlobalStyle`
   :root {
-    ${Fonts}
+    // First define fonts
+    ${Fonts};
+    
+    --main-font-family: 'Inter', serif;
 
-    // define light theme values as the defaults within the root selector
+    // Then define light theme values as the defaults within the root selector
     ${lightValues};
     
-    // override with dark theme values within media query
+    // Finally override with dark theme values within media query
     @media(prefers-color-scheme: dark) {
       ${darkValues}
     }
   }
+  
+  // Global native styles
 
   * {
     box-sizing: border-box;

@@ -5,7 +5,7 @@ import {
   IconContainer,
   Title,
 } from '@Components/ForecastSmallView/ForecastSmallView.styled'
-import { ReactComponent as Icon } from '@Svg/t01n.svg'
+import { ReactComponent as Icon } from '@Svg/weather/large/t01n.svg'
 
 export type ForecastSmallViewProps = {
   title: ReactNode
