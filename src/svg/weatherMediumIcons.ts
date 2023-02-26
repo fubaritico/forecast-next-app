@@ -221,7 +221,7 @@ export const getWeatherMediumIcon = (
     : undefined
 
 /**
- * Will return all icons component stored in an object
+ * Will return all icons components of the icon group stored in an object
  * @returns LazyIconsGroup<WeatherMediumIcon>
  */
 export const getWeatherMediumIcons = (): LazyIconsGroup<WeatherMediumIcon> =>

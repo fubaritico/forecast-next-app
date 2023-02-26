@@ -38,5 +38,13 @@ Large.storyName = 'Large weather icons'
 Large.args = {
   iconGroupName: 'WeatherLarge',
   iconsSize: 64,
-  title: 'Large weather icon (not yet defined where to be used',
+  title: 'Large weather icons (not yet defined where to be used)',
+}
+
+export const DetailSmall = Template.bind({})
+DetailSmall.storyName = 'Small detail panel UI'
+DetailSmall.args = {
+  iconGroupName: 'DetailSmall',
+  iconsSize: 32,
+  title: 'Small icons used in detail panel',
 }

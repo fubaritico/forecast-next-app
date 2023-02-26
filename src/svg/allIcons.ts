@@ -1,11 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // For all changes please modify scripts/iconsGroups.template.txt file first and regenerate.
 
+import { getDetailMediumIcons } from './detailMediumIcons'
+import { getDetailSmallIcons } from './detailSmallIcons'
 import { getWeatherLargeIcons } from './weatherLargeIcons'
 import { getWeatherMediumIcons } from './weatherMediumIcons'
 import { getWeatherSmallIcons } from './weatherSmallIcons'
 
 const ICONS_GROUPS = {
+  DetailMedium: getDetailMediumIcons,
+  DetailSmall: getDetailSmallIcons,
   WeatherLarge: getWeatherLargeIcons,
   WeatherMedium: getWeatherMediumIcons,
   WeatherSmall: getWeatherSmallIcons,

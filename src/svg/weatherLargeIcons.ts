@@ -50,7 +50,7 @@ export const getWeatherLargeIcon = (
     : undefined
 
 /**
- * Will return all icons component stored in an object
+ * Will return all icons components of the icon group stored in an object
  * @returns LazyIconsGroup<WeatherLargeIcon>
  */
 export const getWeatherLargeIcons = (): LazyIconsGroup<WeatherLargeIcon> =>
