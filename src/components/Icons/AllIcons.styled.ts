@@ -26,7 +26,7 @@ const setMaxWidth = (size?: Sizes): string => {
 }
 
 export const IconGrid = styled.div`
-  font-family: var(--main-font-family);
+  font-family: var(--inter-font-family);
 `
 
 export const IconGridTitle = styled.h2`

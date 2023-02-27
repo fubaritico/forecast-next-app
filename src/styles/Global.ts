@@ -54,7 +54,6 @@ const lightValues = css`
 const darkValues = css`
   --max-width: ${({ theme }) => theme.dark.maxWidth};
   --border-radius: ${({ theme }) => theme.dark.borderRadius};
-  --font-mono: ${({ theme }) => theme.dark.fontsMono};
 
   --foreground-rgb: ${({ theme }) => theme.dark.foregroundRgb};
   --background-start-rgb: ${({ theme }) => theme.dark.backgroundStartRgb};
@@ -101,8 +100,9 @@ export default createGlobalStyle`
   :root {
     // First define fonts
     ${Fonts};
-    
-    --main-font-family: 'Inter', serif;
+
+    --inter-font-family: 'Inter', serif;
+    --helvetica-font-family: 'HelveticaNeueLT', serif;
 
     // Then define light theme values as the defaults within the root selector
     ${lightValues};

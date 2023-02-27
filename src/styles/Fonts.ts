@@ -155,6 +155,24 @@ const Fonts = css`
         format('svg'); /* Legacy iOS */
     font-display: swap;
   }
+
+  @font-face {
+    font-family: 'HelveticaNeueLT';
+    font-weight: 100;
+    src: local(''),
+      url('/fonts/610d82c5-3398-43d5-ba50-a723a7fee1df.woff2') format('woff2'),
+      url('/fonts/0a4f530a-a78e-4d59-8630-7ebc4e8b0a6d.woff') format('woff');
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'HelveticaNeueLT';
+    font-weight: 300;
+    src: local(''),
+      url('/fonts/bb27f557-f7ae-41b7-9351-87ec43e9588d.woff2') format('woff2'),
+      url('/fonts/3f193a27-2869-4003-9da3-c10926a26e32.woff') format('woff');
+    font-display: swap;
+  }
 `
 
 export default Fonts

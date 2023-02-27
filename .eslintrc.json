@@ -22,7 +22,8 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
-    "react/jsx-no-useless-fragment": [0, { "allowExpressions": true }]
+    "react/jsx-no-useless-fragment": [0, { "allowExpressions": true }],
+    "import/prefer-default-export": ["off"]
   },
   "overrides": [
     {

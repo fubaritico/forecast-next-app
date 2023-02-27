@@ -1,11 +1,11 @@
 import { FC } from 'react'
 
 type SVGLinearGradientsDefinitionsProps = {
-  gridGradient?: string
+  gradientColor?: string
 }
 
 const SVGLinearGradientsDefinitions: FC<SVGLinearGradientsDefinitionsProps> = ({
-  gridGradient,
+  gradientColor,
 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -13,15 +13,15 @@ const SVGLinearGradientsDefinitions: FC<SVGLinearGradientsDefinitionsProps> = ({
     style={{ position: 'fixed', left: -10000 }}
   >
     <defs>
-      {gridGradient ? (
+      {gradientColor ? (
         <linearGradient
           id="gridGradient"
           gradientUnits="userSpaceOnUse"
           gradientTransform="rotate(90)"
         >
-          <stop stopColor="transparent" offset="0%" />
-          <stop stopColor={gridGradient} offset="50%" />
-          <stop stopColor={gridGradient} offset="100%" />
+          <stop stopColor={`${gradientColor}00`} offset="0%" />
+          <stop stopColor={`${gradientColor}66`} offset="50%" />
+          <stop stopColor={`${gradientColor}66`} offset="100%" />
         </linearGradient>
       ) : null}
     </defs>

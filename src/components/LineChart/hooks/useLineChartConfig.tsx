@@ -7,7 +7,7 @@ type LineChartConfig = {
   GradientDefinitions: JSX.Element
 }
 
-type SerieData =
+export type SerieData =
   | (number | null)[]
   | {
       x: any
@@ -65,7 +65,11 @@ export default function useLineChartConfig<TDatum extends SerieData>(
       zoom: {
         enabled: false,
       },
+      fontFamily: "'Inter', sans-serif",
       type: 'line',
+      brush: {
+        autoScaleYaxis: true,
+      },
     },
     xaxis: {
       axisTicks: {
@@ -77,8 +81,9 @@ export default function useLineChartConfig<TDatum extends SerieData>(
       categories,
       labels: {
         style: {
+          fontSize: '14px',
           colors: categories.map(() => color),
-          fontWeight: 'bold',
+          fontWeight: 'normal',
         },
       },
     },
@@ -125,8 +130,10 @@ export default function useLineChartConfig<TDatum extends SerieData>(
     },
     dataLabels: {
       enabled: true,
-      offsetY: -7,
+      offsetY: -10,
       style: {
+        fontSize: '18px',
+        fontWeight: 'normal',
         colors: [color],
       },
       formatter(value) {
@@ -142,7 +149,7 @@ export default function useLineChartConfig<TDatum extends SerieData>(
     config: chartConfig,
     series,
     GradientDefinitions: (
-      <SVGLinearGradientsDefinitions gridGradient={`${color}33`} />
+      <SVGLinearGradientsDefinitions gradientColor={color} />
     ),
   }
 }

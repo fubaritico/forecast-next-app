@@ -16,6 +16,7 @@
       "@Requests/*": ["src/api/requests/*"],
       "@Services/*": ["src/services/*"],
       "@Styles/*": ["src/styles/*"],
+      "@Stubs/*": ["src/stubs/*"],
       "@Svg/*": ["src/svg/*"],
       "@Test/*": ["src/test/*"],
       "@Types": ["src/types"],

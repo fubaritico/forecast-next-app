@@ -4,11 +4,10 @@ import useLineChartConfig, {
   LineChartConfigParams,
 } from './hooks/useLineChartConfig'
 
-// eslint-disable-next-line import/no-named-as-default
 import ChartLineWrapper from './LineChart.styled'
 
 export type LineChartProps = LineChartConfigParams<number[]> & {
-  color: string
+  color?: string
 }
 
 const LineChart: FC<PropsWithChildren<LineChartProps>> = ({
@@ -29,8 +28,8 @@ const LineChart: FC<PropsWithChildren<LineChartProps>> = ({
   return (
     <>
       {GradientDefinitions}
-      <ChartLineWrapper data-name="line-chart">
-        <Chart options={config} series={series} width={500} height={320} />
+      <ChartLineWrapper aria-label="chart showing temperatures forecasts">
+        <Chart options={config} series={series} />
       </ChartLineWrapper>
     </>
   )
