@@ -7,10 +7,10 @@ import type {
 import type { ReactElement } from 'react'
 import { getCurrentDefaultObservations } from '@Requests/getCurrentDefaultObservations'
 import MainLayout from '@Layouts/MainLayout'
-import Grid from '@Components/Grid/Grid'
-import ClickableCard from '@Components/ClickableCard/ClickableCard'
-import GoogleMapsWrapper from '@Components/GoogleMaps/GoogleMapsWrapper'
-import Map from '@Components/GoogleMaps/Map'
+import Grid from '@Atoms/Grid/Grid'
+import ClickableCard from '@Molecules/ClickableObservation/ClickableCard'
+import GoogleMapsWrapper from '@Organisms/GoogleMaps/GoogleMapsWrapper'
+import Map from '@Organisms/GoogleMaps/Map'
 
 type ForeCastsProps = {
   forecasts: GetCurrentDefaultObservationsAxiosResponse // For now will display 8 selected observations, not forecasts for a place

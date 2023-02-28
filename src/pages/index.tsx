@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react'
 import Head from 'next/head'
 import MainLayout from '@Layouts/MainLayout'
-import HomePageContent from '@PageContent/HomePageContent'
+import HomePageContent from '@Organisms/PageContent/HomePageContent'
 
 const HomePage: NextPageWithLayout = () => (
   <>

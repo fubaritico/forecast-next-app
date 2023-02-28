@@ -6,10 +6,10 @@ import type {
 } from 'next'
 import { SSR_WeatherAPI } from '@ApiRoutes'
 import MainLayout from '@Layouts/MainLayout'
-import GoogleMapsWrapper from '@Components/GoogleMaps/GoogleMapsWrapper'
-import Grid from '@Components/Grid/Grid'
-import ClickableCard from '@Components/ClickableCard/ClickableCard'
-import Map from '@Components/GoogleMaps/Map'
+import GoogleMapsWrapper from '@Organisms/GoogleMaps/GoogleMapsWrapper'
+import Grid from '@Atoms/Grid/Grid'
+import ClickableCard from '@Molecules/ClickableObservation/ClickableCard'
+import Map from '@Organisms/GoogleMaps/Map'
 
 import { ReactElement } from 'react'
 import MapMouseEvent = google.maps.MapMouseEvent

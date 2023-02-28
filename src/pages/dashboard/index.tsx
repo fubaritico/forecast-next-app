@@ -1,4 +1,4 @@
-import DashboardPageContent from '@PageContent/DashboardPageContent'
+import DashboardPageContent from '@Organisms/PageContent/DashboardPageContent'
 import { HomePageLayout } from '../index'
 
 const DashboardPage: NextPageWithLayout = () => <DashboardPageContent />

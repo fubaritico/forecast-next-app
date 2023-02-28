@@ -2,7 +2,7 @@
 import { PartialStoryFn } from '@storybook/csf'
 import { ReactFramework } from '@storybook/react'
 
-import Grid from '@Components/Grid/Grid'
+import Grid from '@Atoms/Grid/Grid'
 import MainLayout from '@Components/Layouts/MainLayout'
 import styled from 'styled-components'
 import ThemeProvider from '@Styles/ThemeProvider'
