@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import Link from 'next/link'
 
 const linkMixin = css`
   font-family: 'Inter', serif;
@@ -46,9 +45,6 @@ const linkMixin = css`
   }
 `
 
-export const AnchorCard = styled.a`
-  ${linkMixin}
-`
-export const NextLinkCard = styled(Link)`
+export const StyledLink = styled.a`
   ${linkMixin}
 `

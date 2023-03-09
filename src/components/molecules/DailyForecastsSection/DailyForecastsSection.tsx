@@ -16,18 +16,20 @@ const DailyForecastsSection: FC<DailyForecastsSectionProps> = ({ data }) => (
     <ForecastsContainer>
       {data.map(
         ({
-          apparentMinimumTemperature,
           apparentMaximumTemperature,
+          apparentMinimumTemperature,
           chancesOfRain,
-          weatherIcon,
+          id,
           timestampLocal,
+          weatherIcon,
         }) => (
           <DailyForecast
+            key={id}
             apparentMinimumTemperature={apparentMinimumTemperature}
             apparentMaximumTemperature={apparentMaximumTemperature}
             chancesOfRain={chancesOfRain}
-            weatherIcon={weatherIcon}
             timestampLocal={timestampLocal}
+            weatherIcon={weatherIcon}
           />
         )
       )}

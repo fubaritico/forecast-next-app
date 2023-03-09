@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { SPACING_1, SPACING_2 } from '@Styles/constants/spacing'
+import { SPACING_1 } from '@Styles/constants/spacing'
 import DynamicIcon from '@Atoms/DynamicIcon/DynamicIcon'
 
 export const Root = styled.div`
@@ -29,7 +29,16 @@ export const ChancesOfRain = styled.span`
   min-height: 15px;
 `
 
+export const IconContainer = styled.div`
+  height: 32px;
+  margin-bottom: ${SPACING_1};
+  width: 32px;
+
+  svg {
+    fill: white;
+  }
+`
+
 export const WeatherIcon = styled(DynamicIcon)`
   fill: white;
-  margin-bottom: ${SPACING_2};
 `

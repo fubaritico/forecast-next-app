@@ -2,8 +2,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@ApiRoutes": ["src/api"],
-      "@ApiRoutes/*": ["src/api/*"],
+      "@Api": ["src/api"],
+      "@Api/*": ["src/api/*"],
+      "@ApiRoutes": ["src/pages/api"],
+      "@ApiRoutes/*": ["src/pages/api/*"],
       "@Atoms/*": ["src/components/atoms/*"],
       "@Components/*": ["src/components/*"],
       "@Contexts/*": ["src/contexts/*"],

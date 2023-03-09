@@ -5,11 +5,11 @@ import { NextPage } from 'next'
 import { AxiosError } from 'axios'
 
 export {}
-/*
+
 declare module '*.svg' {
-  const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>
-  export default content
-} */
+  const ReactComponent: FC<SVGProps<SVGSVGElement>>
+  export default ReactComponent
+}
 
 declare global {
   // STYLES: UX & THEME
@@ -95,6 +95,17 @@ declare global {
     GetCurrentDefaultObservationsResponse,
     AxiosError
   >
+
+  type GetObservationDetailsAxiosResponse = AxiosResponse<
+    GetDetailedForecatsResponse,
+    AxiosError
+  >
+
+  // API ROUTE REQUEST
+
+  type GetObservationDetailsRequestParams = Coordinates & {
+    cityName: string
+  }
 
   // DYNAMICALLY DISPLAYED ICONS
 

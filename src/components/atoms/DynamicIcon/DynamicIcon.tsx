@@ -4,14 +4,14 @@ import { ReactComponent as PlaceHolderIcon } from '@Svg/weather/small/placeholde
 export type DynamicIconProps = {
   path: string
   name: string
-  size?: number
+  size?: number | string
   fill?: string
 }
 
 const DynamicIcon: FC<DynamicIconProps> = ({
   path,
   name,
-  size = 16,
+  size = '100%',
   fill = '#000',
   ...rest
 }) => {

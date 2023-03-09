@@ -5,6 +5,7 @@ import {
   ChancesOfRain,
   WeekDay,
   WeatherIcon,
+  IconContainer,
 } from './DailyForecast.styled'
 
 export type DailyForecastProps = {
@@ -25,9 +26,9 @@ const DailyForecast: FC<DailyForecastProps> = ({
   <Root>
     {timestampLocal && <WeekDay>{timestampLocal.weekDay}</WeekDay>}
     <ChancesOfRain>{chancesOfRain}</ChancesOfRain>
-    {weatherIcon && (
-      <WeatherIcon path="weather/small" name={weatherIcon} size={32} />
-    )}
+    <IconContainer>
+      {weatherIcon && <WeatherIcon path="weather/small" name={weatherIcon} />}
+    </IconContainer>
     <MaxMinTemperatures
       apparentMinimumTemperature={apparentMinimumTemperature}
       apparentMaximumTemperature={apparentMaximumTemperature}

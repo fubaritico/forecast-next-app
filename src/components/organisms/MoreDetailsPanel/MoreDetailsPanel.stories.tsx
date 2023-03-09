@@ -18,6 +18,7 @@ const Template: ComponentStory<typeof MoreDetailsPanel> = (
 
 export const Default = Template.bind({})
 Default.args = {
+  weather: currentObservationPanel.currentObservation.weatherIcon,
   details: currentObservationPanel.currentObservation,
   dailyForecasts: currentObservationPanel.dailyForecasts,
   chancesOfRain: currentObservationPanel.hourlyForecasts.chancesOfRain,

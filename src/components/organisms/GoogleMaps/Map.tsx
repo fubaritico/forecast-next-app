@@ -29,6 +29,14 @@ const Map: FC<PropsWithChildren<MapProps>> = ({
         new google.maps.Map(ref.current, {
           center: { lat: -34, lng: 151 },
           zoom: 8,
+          clickableIcons: false,
+          fullscreenControl: false,
+          mapTypeControl: false,
+          panControl: false,
+          rotateControl: false,
+          scaleControl: false,
+          streetViewControl: false,
+          zoomControl: false,
         })
       )
     }

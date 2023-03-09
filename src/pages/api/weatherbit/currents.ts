@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { getCurrentDefaultObservations } from '@Requests/getCurrentDefaultObservations'
+import { getDefaultObservationsRequest } from '@Api/getDefaultObservationsRequest'
 import { AxiosError } from 'axios'
 
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
@@ -18,9 +18,7 @@ export default async function handler(
   res: NextApiResponse<GetCurrentDefaultObservationsAxiosResponse>
 ) {
   try {
-    const response = await getCurrentDefaultObservations(
-      req.query as unknown as Coordinates
-    )
+    const response = await getDefaultObservationsRequest()
     res.status(200).send(response)
   } catch (error: unknown) {
     res.status(500).send(error as AxiosError)

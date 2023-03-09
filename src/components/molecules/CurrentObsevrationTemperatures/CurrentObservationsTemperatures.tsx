@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
-import LineChart from '@Molecules/LineChart/LineChart'
 import useMapChartData from '@Molecules/LineChart/hooks/useMapChartData'
+import useNoSsrLineChart from '@Molecules/LineChart/hooks/useNoSsrLineChart'
 import { Root } from './CurrentObservationsTemperatures.styled'
 
 type CurrentObservationsTemperaturesProps = {
@@ -12,14 +12,15 @@ const CurrentObservationsTemperatures: FC<
   CurrentObservationsTemperaturesProps
 > = ({ data, height }) => {
   const chartData = useMapChartData(data, '#ffffff', 'temperatures', '°')
+  const LineChart = useNoSsrLineChart({
+    ...chartData,
+    height,
+    ariaLabel: 'chart showing temperatures forecasts',
+  })
 
   return (
     <Root>
-      <LineChart
-        {...chartData}
-        height={height}
-        ariaLabel="chart showing temperatures forecasts"
-      />
+      <LineChart />
     </Root>
   )
 }

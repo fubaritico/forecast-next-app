@@ -22,7 +22,4 @@ export const Root = styled.article<RootProps>`
   min-width: 320px;
   max-width: 360px;
   height: 640px;
-  will-change: transform;
-  filter: drop-shadow(0px 0px ${SPACING_2} rgba(0, 0, 0, 0.2));
-  mix-blend-mode: multiply;
 `

@@ -9,6 +9,7 @@ const A02n = svgLazyLoader('weather/small/a02n.svg')
 const A03d = svgLazyLoader('weather/small/a03d.svg')
 const A04d = svgLazyLoader('weather/small/a04d.svg')
 const A05d = svgLazyLoader('weather/small/a05d.svg')
+const A05n = svgLazyLoader('weather/small/a05n.svg')
 const A06d = svgLazyLoader('weather/small/a06d.svg')
 const A06n = svgLazyLoader('weather/small/a06n.svg')
 const C01d = svgLazyLoader('weather/small/c01d.svg')
@@ -73,6 +74,7 @@ export const ALL_WEATHER_SMALL_ICONS = [
   'a03d',
   'a04d',
   'a05d',
+  'a05n',
   'a06d',
   'a06n',
   'c01d',
@@ -145,6 +147,7 @@ const ICONS: LazyIconsGroup<WeatherSmallIcon> = {
   a03d: A03d,
   a04d: A04d,
   a05d: A05d,
+  a05n: A05n,
   a06d: A06d,
   a06n: A06n,
   c01d: C01d,

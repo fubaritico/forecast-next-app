@@ -51,8 +51,6 @@ export default function useLineChartConfig<TDatum extends SerieData>(
     dataLabelsOffsetY,
   } = params
 
-  console.log('useLineChartConfig - categories: ', categories)
-
   if (categories.length !== serieData.length) {
     throw Error(
       'The length of categories must be equal to the length of data displayed in the chart'

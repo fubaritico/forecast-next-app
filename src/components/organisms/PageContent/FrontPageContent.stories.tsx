@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { withMainLayout } from '@Decorators/withLayout'
-import FrontPageContent from './FrontPageContent'
+import FrontPageContent, { FrontPageContentProps } from './FrontPageContent'
 import currentDefaultObservations from './FrontPageContent.stubs'
 
 export default {
@@ -10,6 +10,11 @@ export default {
   decorators: [withMainLayout],
 } as ComponentMeta<typeof FrontPageContent>
 
-export const Default: ComponentStory<typeof FrontPageContent> = () => (
-  <FrontPageContent forecasts={currentDefaultObservations} />
-)
+const Template: ComponentStory<typeof FrontPageContent> = (
+  args: FrontPageContentProps
+) => <FrontPageContent {...args} />
+
+export const Default = Template.bind({})
+Default.args = {
+  forecasts: currentDefaultObservations,
+}

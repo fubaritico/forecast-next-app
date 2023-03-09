@@ -22,7 +22,7 @@ describe('CurrentObservationPanel', () => {
     render(<Default />)
 
     await act(async () => {
-      expect(await screen.findByText(/Sainte-Thorette/i)).toBeInTheDocument()
+      expect(await screen.findByText(/Lille/i)).toBeInTheDocument()
     })
   })
 })

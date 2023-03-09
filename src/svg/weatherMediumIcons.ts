@@ -13,6 +13,7 @@ const A04n = svgLazyLoader('weather/medium/a04n.svg')
 const A05d = svgLazyLoader('weather/medium/a05d.svg')
 const A05n = svgLazyLoader('weather/medium/a05n.svg')
 const A06d = svgLazyLoader('weather/medium/a06d.svg')
+const A06n = svgLazyLoader('weather/medium/a06n.svg')
 const C01d = svgLazyLoader('weather/medium/c01d.svg')
 const C01n = svgLazyLoader('weather/medium/c01n.svg')
 const C02d = svgLazyLoader('weather/medium/c02d.svg')
@@ -79,6 +80,7 @@ export const ALL_WEATHER_MEDIUM_ICONS = [
   'a05d',
   'a05n',
   'a06d',
+  'a06n',
   'c01d',
   'c01n',
   'c02d',
@@ -153,6 +155,7 @@ const ICONS: LazyIconsGroup<WeatherMediumIcon> = {
   a05d: A05d,
   a05n: A05n,
   a06d: A06d,
+  a06n: A06n,
   c01d: C01d,
   c01n: C01n,
   c02d: C02d,
