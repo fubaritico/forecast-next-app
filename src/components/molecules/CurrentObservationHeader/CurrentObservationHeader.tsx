@@ -1,3 +1,5 @@
+'use client'
+
 import { FC, MouseEventHandler } from 'react'
 import { ReactComponent as MenuIcon } from '@Svg/detail/small/menu.svg'
 import { ReactComponent as MoreIcon } from '@Svg/detail/small/more.svg'

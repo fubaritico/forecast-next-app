@@ -1,5 +1,7 @@
+'use client'
+
 import { FC, PropsWithChildren } from 'react'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import GoogleMapsWrapper from '@Organisms/GoogleMaps/GoogleMapsWrapper'
 import Map from '@Organisms/GoogleMaps/Map'
 import Grid from '@Atoms/Grid/Grid'
@@ -41,16 +43,13 @@ const FrontPageContent: FC<PropsWithChildren<FrontPageContentProps>> = ({
           return
         }
 
-        router.push(
-          {
-            pathname: '/details/[cityName]',
-            query: {
-              lat: latLng.lat(),
-              lon: latLng.lng(),
-            },
+        router.push(`/details/${locality}-${country}`, {
+          pathname: '/details/[cityName]',
+          query: {
+            lat: latLng.lat(),
+            lon: latLng.lng(),
           },
-          `/details/${locality}-${country}`
-        )
+        })
       }
     )
   }
@@ -71,7 +70,7 @@ const FrontPageContent: FC<PropsWithChildren<FrontPageContentProps>> = ({
           <ClickableObservationCard
             key={f.id}
             href={{
-              pathname: '/details/[cityName]',
+              pathname: `/details/${f.cityName}`,
               query: {
                 lat: f.lat,
                 lon: f.lon,

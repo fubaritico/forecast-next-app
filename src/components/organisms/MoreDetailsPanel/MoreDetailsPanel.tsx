@@ -1,3 +1,5 @@
+'use client'
+
 import { FC } from 'react'
 import PanelBackground from '@Atoms/PanelBackground/PanelBackground'
 import DetailsSection from '@Molecules/DetailsSection/DetailsSection'

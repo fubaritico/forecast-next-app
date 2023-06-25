@@ -1,3 +1,5 @@
+'use client'
+
 import { FC, PropsWithChildren } from 'react'
 import Image from 'next/image'
 import Default from './Thirteen.styled'

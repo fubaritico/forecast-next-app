@@ -1,11 +1,10 @@
-import { composeStories } from '@storybook/testing-react'
+import { composeStories, StoryFn } from '@storybook/react'
 import { render, screen } from '@Utils/reactTestingLibrary'
 import { ALL_WEATHER_SMALL_ICONS } from '@Svg/weatherSmallIcons'
 import { ALL_WEATHER_MEDIUM_ICONS } from '@Svg/weatherMediumIcons'
 import { ALL_WEATHER_LARGE_ICONS } from '@Svg/weatherLargeIcons'
 
 import { act } from '@testing-library/react'
-import { StoryFn } from '@storybook/react'
 import { AllIconsProps } from '@Atoms/Icons/AllIcons'
 import * as AllIconsStories from './AllIcons.stories'
 

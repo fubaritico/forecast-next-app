@@ -1,9 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { PartialStoryFn } from '@storybook/csf'
-import { ReactFramework } from '@storybook/react'
+import { ReactRenderer } from '@storybook/react'
 
 import Grid from '@Atoms/Grid/Grid'
-import MainLayout from '@Components/Layouts/MainLayout'
+import MainLayout from '@Components/atoms/Main'
 import styled from 'styled-components'
 import ThemeProvider from '@Styles/ThemeProvider'
 
@@ -15,7 +15,7 @@ const PaddedContainer = styled.div`
 `
 
 export const withPadding = (
-  StoryFn: PartialStoryFn<ReactFramework>,
+  StoryFn: PartialStoryFn<ReactRenderer>,
   context: JSX.IntrinsicAttributes
 ) => (
   <PaddedContainer>
@@ -24,7 +24,7 @@ export const withPadding = (
 )
 
 export const withGrid = (
-  StoryFn: PartialStoryFn<ReactFramework>,
+  StoryFn: PartialStoryFn<ReactRenderer>,
   context: JSX.IntrinsicAttributes
 ) => (
   <Grid>
@@ -33,7 +33,7 @@ export const withGrid = (
 )
 
 export const withMainLayout = (
-  StoryFn: PartialStoryFn<ReactFramework>,
+  StoryFn: PartialStoryFn<ReactRenderer>,
   context: JSX.IntrinsicAttributes
 ) => (
   <MainLayout>
@@ -42,7 +42,7 @@ export const withMainLayout = (
 )
 
 export const withTheme = (
-  StoryFn: PartialStoryFn<ReactFramework>,
+  StoryFn: PartialStoryFn<ReactRenderer>,
   context: JSX.IntrinsicAttributes
 ) => (
   <ThemeProvider>

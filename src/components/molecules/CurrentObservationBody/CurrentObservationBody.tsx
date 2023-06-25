@@ -1,3 +1,5 @@
+'use client'
+
 import { FC } from 'react'
 import { getWeatherMediumIcon } from '@Svg/weatherMediumIcons'
 import MaxMinTemperatures from '@Molecules/MaxMinTemperatures/MaxMinTemperatures'

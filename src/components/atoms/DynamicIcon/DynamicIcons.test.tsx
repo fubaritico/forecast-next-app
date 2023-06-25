@@ -1,8 +1,7 @@
-import { composeStories } from '@storybook/testing-react'
+import { composeStories, StoryFn } from '@storybook/react'
 import { render, screen } from '@Utils/reactTestingLibrary'
 
 import { act } from '@testing-library/react'
-import { StoryFn } from '@storybook/react'
 import * as DynamicIconsStories from './DynamicIcons.stories'
 import { DynamicIconsProps } from './DynamicIcons'
 import { smallIcons, mediumIcons, largeIcons } from './iconsGroups'

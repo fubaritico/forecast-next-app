@@ -1,3 +1,5 @@
+'use client'
+
 import { FC, PropsWithChildren } from 'react'
 import Link from 'next/link'
 import Thirteen from '@Atoms/Thirteen/Thirteen'

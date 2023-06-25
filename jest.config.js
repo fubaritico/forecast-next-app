@@ -13,7 +13,11 @@ const createJestConfig = nextJest({
 // Add any custom config to be passed to Jest
 /** @type {import('jest').Config} */
 const customJestConfig = {
+  preset: 'ts-jest',
   testEnvironment: 'jest-environment-jsdom',
+  globals: {
+    IS_REACT_ACT_ENVIRONMENT: true,
+  },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.afterEnv.js'], // Add more setup options before each test is run
   setupFiles: ['<rootDir>/jest.setup.js'], // Stub native javascript features
   testRegex: ['(/src/.*(test|spec))\\.[jt]sx?$'],

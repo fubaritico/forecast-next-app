@@ -1,3 +1,5 @@
+'use client'
+
 import React, { FC } from 'react'
 import useMapChartData from '@Molecules/LineChart/hooks/useMapChartData'
 import useNoSsrLineChart from '@Molecules/LineChart/hooks/useNoSsrLineChart'
