@@ -1,4 +1,12 @@
+/* eslint-disable no-console */
 import { format } from 'util'
+
+// Used to declare and use global decorators and parameters, etc... (global config)
+import { setProjectAnnotations } from '@storybook/react'
+
+import globalStorybookConfig from './.storybook/preview'
+
+setProjectAnnotations(globalStorybookConfig)
 
 // Remove "Error: Not implemented: window.scrollTo"
 const noop = () => {}
@@ -43,7 +51,9 @@ console.error = (...args) => {
     // Add other behaviors here
   }
 }
-process.on('unhandledRejection', (reason, p) => {
+process.on('unhandledRejection', (reason: unknown & { stack: never }, p) => {
   console.log('Unhandled Rejection at: Promise', p, 'reason:', reason)
   console.log('Unhandled Rejection stack', reason?.stack)
 })
+
+/* eslint-enable no-console */

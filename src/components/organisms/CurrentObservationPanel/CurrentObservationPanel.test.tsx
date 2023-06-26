@@ -1,7 +1,6 @@
 import { composeStories } from '@storybook/react'
 import { render, screen } from '@Utils/reactTestingLibrary'
 
-import { act } from '@testing-library/react'
 import * as CurrentObservationPanelStories from './CurrentObservationPanel.stories'
 
 /**
@@ -21,8 +20,6 @@ describe('CurrentObservationPanel', () => {
   it('should render', async () => {
     render(<Default />)
 
-    await act(async () => {
-      expect(await screen.findByText(/Lille/i)).toBeInTheDocument()
-    })
+    expect(await screen.findByText(/Lille/i)).toBeInTheDocument()
   })
 })

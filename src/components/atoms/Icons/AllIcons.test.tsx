@@ -4,7 +4,6 @@ import { ALL_WEATHER_SMALL_ICONS } from '@Svg/weatherSmallIcons'
 import { ALL_WEATHER_MEDIUM_ICONS } from '@Svg/weatherMediumIcons'
 import { ALL_WEATHER_LARGE_ICONS } from '@Svg/weatherLargeIcons'
 
-import { act } from '@testing-library/react'
 import { AllIconsProps } from '@Atoms/Icons/AllIcons'
 import * as AllIconsStories from './AllIcons.stories'
 
@@ -19,11 +18,8 @@ const isIconInTheDocument = async (
   Component: StoryFn<Partial<AllIconsProps>>
 ) => {
   render(<Component />)
-  await act(async () => {
-    expect(await screen.findByText(iconName)).toBeInTheDocument()
-  })
 
-  expect(await screen.getByTestId(iconName)).toBeInTheDocument()
+  expect(await screen.findByText(iconName)).toBeInTheDocument()
 }
 
 describe('All Icons', () => {

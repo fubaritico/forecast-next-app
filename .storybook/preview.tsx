@@ -1,17 +1,20 @@
+import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import * as NextImage from 'next/image'
 import Theme from '../src/styles/Theme'
 import GlobalStyle from '../src/styles/Global'
+import { Preview } from '@storybook/react'
+import { StoryFn } from '@storybook/react'
 
 const OriginalNextImage = NextImage.default
 
 Object.defineProperty(NextImage, 'default', {
   configurable: true,
-  value: (props) => <OriginalNextImage {...props} unoptimized />,
+  value: (props: any) => <OriginalNextImage {...props} unoptimized />,
 })
 
 // Global default decorators
-const withThemeProvider = (Story, context) => {
+const withThemeProvider = (Story: StoryFn, context: any) => {
   return (
     <ThemeProvider theme={Theme}>
       <>
@@ -21,10 +24,10 @@ const withThemeProvider = (Story, context) => {
     </ThemeProvider>
   )
 }
-export const decorators = [withThemeProvider]
+const decorators = [withThemeProvider]
 
 // Global default parameter
-export const parameters = {
+const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
@@ -34,7 +37,7 @@ export const parameters = {
   },
 }
 
-const preview = {
+const preview: Preview = {
   decorators,
   parameters,
 }

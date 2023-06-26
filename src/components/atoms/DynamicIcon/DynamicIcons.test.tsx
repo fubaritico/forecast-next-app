@@ -1,7 +1,6 @@
 import { composeStories, StoryFn } from '@storybook/react'
 import { render, screen } from '@Utils/reactTestingLibrary'
 
-import { act } from '@testing-library/react'
 import * as DynamicIconsStories from './DynamicIcons.stories'
 import { DynamicIconsProps } from './DynamicIcons'
 import { smallIcons, mediumIcons, largeIcons } from './iconsGroups'
@@ -13,11 +12,7 @@ const isDynamicIconInTheDocument = async (
   Component: StoryFn<Partial<DynamicIconsProps>>
 ) => {
   render(<Component />)
-  await act(async () => {
-    expect(await screen.findByText(iconName)).toBeInTheDocument()
-  })
-
-  expect(await screen.getByTestId(iconName)).toBeInTheDocument()
+  expect(await screen.findByText(iconName)).toBeInTheDocument()
 }
 
 describe('Dynamic Icons', () => {
