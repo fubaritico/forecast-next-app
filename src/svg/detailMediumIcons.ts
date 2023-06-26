@@ -14,7 +14,7 @@ export const ALL_DETAIL_MEDIUM_ICONS = [
   'windSpeed',
 ] as const
 
-export type DetailMediumIcon = typeof ALL_DETAIL_MEDIUM_ICONS[number]
+export type DetailMediumIcon = (typeof ALL_DETAIL_MEDIUM_ICONS)[number]
 
 const isDetailMediumIcon = (
   DetailMediumIconKey: string

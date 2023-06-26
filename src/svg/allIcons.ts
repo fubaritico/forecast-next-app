@@ -35,7 +35,7 @@ const isIconsGroup = (iconsGroupKey: string): iconsGroupKey is IconsGroup =>
  */
 const isIconOfIconsGroup = (
   iconKey: string,
-  iconsGroup: ReturnType<typeof ICONS_GROUPS[IconsGroup]>
+  iconsGroup: ReturnType<(typeof ICONS_GROUPS)[IconsGroup]>
 ): iconKey is keyof typeof iconsGroup =>
   (Object.keys(iconsGroup) as (keyof typeof iconsGroup)[]).includes(
     iconKey as keyof typeof iconsGroup
@@ -48,7 +48,7 @@ const isIconOfIconsGroup = (
  */
 export const getDsIcons = (
   iconsGroupKey: string | undefined
-): ReturnType<typeof ICONS_GROUPS[IconsGroup]> | undefined =>
+): ReturnType<(typeof ICONS_GROUPS)[IconsGroup]> | undefined =>
   iconsGroupKey && isIconsGroup(iconsGroupKey)
     ? ICONS_GROUPS[iconsGroupKey]()
     : undefined

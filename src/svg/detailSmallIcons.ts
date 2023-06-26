@@ -22,7 +22,7 @@ export const ALL_DETAIL_SMALL_ICONS = [
   'windSpeed',
 ] as const
 
-export type DetailSmallIcon = typeof ALL_DETAIL_SMALL_ICONS[number]
+export type DetailSmallIcon = (typeof ALL_DETAIL_SMALL_ICONS)[number]
 
 const isDetailSmallIcon = (
   DetailSmallIconKey: string

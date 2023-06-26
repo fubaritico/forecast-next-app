@@ -1,13 +1,10 @@
-// import { useSearchParams } from 'next/navigation'
-import { AxiosError } from 'axios'
-
 import { getObservationDetailsRequest } from '@Api/getObservationsDetails'
 
 import CurrentObservationPanel from '@Organisms/CurrentObservationPanel/CurrentObservationPanel'
 
 import { Metadata } from 'next'
-
-type RequestResponse = GetDetailedForecatsResponse | AxiosError
+import { AxiosError, isAxiosError, RequestResponse } from '@Utils/error'
+import React from 'react'
 
 type PageContext = {
   params: { cityName: string }
@@ -17,10 +14,9 @@ type PageContext = {
 const getObservationDetails = async ({
   params,
   searchParams,
-}: PageContext): Promise<RequestResponse> => {
-  const requestParams = searchParams || params
+}: PageContext): Promise<RequestResponse<GetDetailedForecatsResponse>> => {
+  const requestParams = { ...searchParams, ...params }
   console.log('getObservationDetails - params: ', params)
-  console.log('getObservationDetails - requestParams: ', requestParams)
 
   try {
     const response: GetObservationDetailsAxiosResponse =
@@ -38,17 +34,14 @@ export const metadata: Metadata = {
   title: 'Forecasts',
 }
 
-const isAxiosError = (res: RequestResponse): res is AxiosError =>
-  typeof (res as unknown as AxiosError).isAxiosError !== 'undefined'
-
 const DetailsPage = async ({ params, searchParams }: PageContext) => {
   const apiCallResult = await getObservationDetails({
     searchParams,
     params,
   })
 
-  if (isAxiosError(apiCallResult)) {
-    return <div>An error occured</div>
+  if (isAxiosError<GetDetailedForecatsResponse>(apiCallResult)) {
+    return <div>No observation returned - (Client)</div>
   }
 
   return <CurrentObservationPanel data={apiCallResult} />

@@ -20,7 +20,7 @@ export const ALL_WEATHER_LARGE_ICONS = [
   't03n',
 ] as const
 
-export type WeatherLargeIcon = typeof ALL_WEATHER_LARGE_ICONS[number]
+export type WeatherLargeIcon = (typeof ALL_WEATHER_LARGE_ICONS)[number]
 
 const isWeatherLargeIcon = (
   WeatherLargeIconKey: string

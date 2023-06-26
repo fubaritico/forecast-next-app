@@ -132,7 +132,7 @@ export const ALL_WEATHER_SMALL_ICONS = [
   'u00n',
 ] as const
 
-export type WeatherSmallIcon = typeof ALL_WEATHER_SMALL_ICONS[number]
+export type WeatherSmallIcon = (typeof ALL_WEATHER_SMALL_ICONS)[number]
 
 const isWeatherSmallIcon = (
   WeatherSmallIconKey: string

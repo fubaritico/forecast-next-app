@@ -136,7 +136,7 @@ export const ALL_WEATHER_MEDIUM_ICONS = [
   'u00n',
 ] as const
 
-export type WeatherMediumIcon = typeof ALL_WEATHER_MEDIUM_ICONS[number]
+export type WeatherMediumIcon = (typeof ALL_WEATHER_MEDIUM_ICONS)[number]
 
 const isWeatherMediumIcon = (
   WeatherMediumIconKey: string

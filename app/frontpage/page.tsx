@@ -1,14 +1,12 @@
-import { AxiosError } from 'axios'
 import { getDefaultObservationsRequest } from '@Api/getDefaultObservationsRequest'
 
 import FrontPageContent from '@Organisms/PageContent/FrontPageContent'
 import { Metadata } from 'next'
+import { AxiosError, isAxiosError, RequestResponse } from '@Utils/error'
 
-type RequestResponse = GetCurrentDefaultObservationsResponse | AxiosError
-
-const getCurrentDefaultObservations = async (): Promise<RequestResponse> => {
-  console.log('getCurrentDefaultObservations')
-
+const getCurrentDefaultObservations = async (): Promise<
+  RequestResponse<GetCurrentDefaultObservationsResponse>
+> => {
   try {
     const response: GetCurrentDefaultObservationsAxiosResponse =
       await getDefaultObservationsRequest()
@@ -17,9 +15,6 @@ const getCurrentDefaultObservations = async (): Promise<RequestResponse> => {
     return e as AxiosError
   }
 }
-
-const isAxiosError = (res: RequestResponse): res is AxiosError =>
-  typeof (res as unknown as AxiosError).isAxiosError !== 'undefined'
 
 export const metadata: Metadata = {
   description:
@@ -31,7 +26,7 @@ const FrontPage = async () => {
   const apiCallResult = await getCurrentDefaultObservations()
 
   if (isAxiosError(apiCallResult)) {
-    return <div>An error occured</div>
+    return <div>No observation list has been found (Server side)</div>
   }
 
   return <FrontPageContent forecasts={apiCallResult} />

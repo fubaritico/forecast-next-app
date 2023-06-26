@@ -1,23 +1,69 @@
-import React, { FC, MouseEventHandler, MouseEvent } from 'react'
+'use client'
+
+import React, {
+  FC,
+  MouseEventHandler,
+  MouseEvent,
+  useState,
+  useEffect,
+  useCallback,
+} from 'react'
 import CurrentObservationHeader from '@Molecules/CurrentObservationHeader/CurrentObservationHeader'
 import CurrentObservationBody from '@Molecules/CurrentObservationBody/CurrentObservationBody'
 import CurrentObservationsTemperatures from '@Molecules/CurrentObsevrationTemperatures/CurrentObservationsTemperatures'
 import PanelBackground from '@Atoms/PanelBackground/PanelBackground'
 import MoreDetailsPanel from '@Organisms/MoreDetailsPanel/MoreDetailsPanel'
 import MoreDetailsPanelContainer from '@Atoms/MoreDetailsPanelContainer/MoreDetailsPanelContainer'
+import {
+  ReadonlyURLSearchParams,
+  useParams,
+  useSearchParams,
+} from 'next/navigation'
+import { getObservationDetailsRequest } from '@Api/getObservationsDetails'
+import { AxiosError, isAxiosError, RequestResponse } from '@Utils/error'
 
 export type CurrentObservationPanelProps = {
-  data: GetDetailedForecatsResponse
+  data: RequestResponse<GetDetailedForecatsResponse>
 }
 
 const CurrentObservationPanel: FC<CurrentObservationPanelProps> = ({
   data,
 }) => {
+  const [observation, setObservation] =
+    useState<RequestResponse<GetDetailedForecatsResponse>>(data)
+  const params = useParams()
+  const searchParams: ReadonlyURLSearchParams | null = useSearchParams()
+
+  const getData = useCallback((): Promise<
+    RequestResponse<GetDetailedForecatsResponse>
+  > => {
+    const requestParams = { ...searchParams, ...params }
+
+    return getObservationDetailsRequest(
+      requestParams as unknown as GetObservationDetailsRequestParams
+    )
+  }, [params, searchParams])
+
+  useEffect(() => {
+    if (data) {
+      setObservation(data)
+      return
+    }
+
+    getData()
+      .then((response) => setObservation(response))
+      .catch((e) => setObservation(e as AxiosError))
+  }, [data, getData])
+
   const onMenuClick: MouseEventHandler = (e: MouseEvent) => {
     console.log('CurrentObservationPanel::onMenuClick - e: ', e)
   }
   const onMoreClick: MouseEventHandler = (e: MouseEvent) => {
     console.log('CurrentObservationPanel::onMoreClick - e: ', e)
+  }
+
+  if (isAxiosError<GetDetailedForecatsResponse>(observation)) {
+    return <div>No observation returned - (Client)</div>
   }
 
   const {
@@ -38,7 +84,7 @@ const CurrentObservationPanel: FC<CurrentObservationPanelProps> = ({
     },
     hourlyForecasts: { temperatures, chancesOfRain },
     dailyForecasts,
-  } = data
+  } = observation
 
   const details = {
     feelsLike,
