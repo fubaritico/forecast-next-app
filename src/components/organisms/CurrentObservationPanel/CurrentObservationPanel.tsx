@@ -8,12 +8,12 @@ import React, {
   useEffect,
   useCallback,
 } from 'react'
-import CurrentObservationHeader from '@Molecules/CurrentObservationHeader/CurrentObservationHeader'
-import CurrentObservationBody from '@Molecules/CurrentObservationBody/CurrentObservationBody'
-import CurrentObservationsTemperatures from '@Molecules/CurrentObsevrationTemperatures/CurrentObservationsTemperatures'
-import PanelBackground from '@Atoms/PanelBackground/PanelBackground'
+import CurrentObservationHeader from '@Molecules/CurrentObservationHeader'
+import CurrentObservationBody from '@Molecules/CurrentObservationBody'
+import CurrentObservationTemperatures from '@Molecules/CurrentObservationTemperatures'
+import MoreDetailsPanelContainer from '@Atoms/MoreDetailsPanelContainer'
+import PanelBackground from '@Atoms/PanelBackground'
 import MoreDetailsPanel from '@Organisms/MoreDetailsPanel/MoreDetailsPanel'
-import MoreDetailsPanelContainer from '@Atoms/MoreDetailsPanelContainer/MoreDetailsPanelContainer'
 import {
   ReadonlyURLSearchParams,
   useParams,
@@ -97,7 +97,7 @@ const CurrentObservationPanel: FC<CurrentObservationPanelProps> = ({
 
   return (
     <>
-      <PanelBackground weather={weatherIcon as string}>
+      <PanelBackground weatherIconName={weatherIcon as string}>
         <CurrentObservationHeader
           cityName={cityName}
           date={dateLocal?.formatted}
@@ -111,7 +111,7 @@ const CurrentObservationPanel: FC<CurrentObservationPanelProps> = ({
           weatherDescription={weatherDescription}
           weatherIcon={weatherIcon}
         />
-        <CurrentObservationsTemperatures data={temperatures} height={115} />
+        <CurrentObservationTemperatures data={temperatures} height={115} />
       </PanelBackground>
       <MoreDetailsPanelContainer>
         <MoreDetailsPanel

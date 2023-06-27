@@ -1,8 +1,7 @@
 import React, { FC } from 'react'
 import useMapChartData from '@Molecules/LineChart/hooks/useMapChartData'
 import useNoSsrLineChart from '@Molecules/LineChart/hooks/useNoSsrLineChart'
-import SectionTitle from '@Atoms/SectionTitle/SectionTitle'
-import { Root } from './ChancesOfRain.styled'
+import SectionTitle from '@Atoms/SectionTitle'
 
 type ChancesOfRainSectionProps = {
   data: ChartData[]
@@ -19,10 +18,10 @@ const ChancesOfRainSection: FC<ChancesOfRainSectionProps> = ({ data }) => {
   })
 
   return (
-    <Root>
+    <section className="flex flex-row flex-wrap gap-2 m-4">
       <SectionTitle title="Chances of rain" />
       <LineChart />
-    </Root>
+    </section>
   )
 }
 

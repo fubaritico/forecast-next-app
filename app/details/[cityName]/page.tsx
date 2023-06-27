@@ -1,10 +1,9 @@
 import { getObservationDetailsRequest } from '@Api/getObservationsDetails'
 
-import CurrentObservationPanel from '@Organisms/CurrentObservationPanel/CurrentObservationPanel'
-
 import { Metadata } from 'next'
 import { AxiosError, isAxiosError, RequestResponse } from '@Utils/error'
 import React from 'react'
+import DetailPageContent from '@Organisms/PageContent/DetailPage'
 
 type PageContext = {
   params: { cityName: string }
@@ -44,7 +43,7 @@ const DetailsPage = async ({ params, searchParams }: PageContext) => {
     return <div>No observation returned - (Client)</div>
   }
 
-  return <CurrentObservationPanel data={apiCallResult} />
+  return <DetailPageContent data={apiCallResult} />
 }
 
 export default DetailsPage

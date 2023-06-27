@@ -2,7 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@Lib": ["lib"],
+      "@App/*": ["app/*"],
+      "@Lib/*": ["lib/*"],
       "@Api": ["src/api"],
       "@Api/*": ["src/api/*"],
       "@ApiRoutes": ["src/pages/api"],

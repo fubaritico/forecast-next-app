@@ -1,10 +1,5 @@
 import { FC, PropsWithChildren, ReactNode } from 'react'
-// import Icon from '@Svg/t01n.svg'
-import {
-  Description,
-  IconContainer,
-  Title,
-} from '@Molecules/ForecastSmallView/ForecastSmallView.styled'
+
 import { ReactComponent as Icon } from '@Svg/weather/large/t01n.svg'
 
 export type ForecastSmallViewProps = {
@@ -21,13 +16,15 @@ const ForecastSmallView: FC<PropsWithChildren<ForecastSmallViewProps>> = ({
   description,
 }) => (
   <div>
-    <IconContainer>
+    <div className="w-[128px]">
       <Icon aria-hidden />
-    </IconContainer>
-    <Title>
+    </div>
+    <h2 className="font-mono font-semibold">
       {title} <span>-&gt;</span>
-    </Title>
-    <Description>{description}</Description>
+    </h2>
+    <p className="font-mono m-0 opacity-60 text-[9px] leading-normal max-w-[30ch]">
+      {description}
+    </p>
   </div>
 )
 

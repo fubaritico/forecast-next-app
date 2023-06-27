@@ -1,15 +1,8 @@
 import React, { FC } from 'react'
 
-import { DynamicIconProps } from './DynamicIcon'
-import {
-  GridContainer,
-  IconGridTitle,
-  IconName,
-  IconGrid,
-  IconContainer,
-  IconPlaceHolder,
-  ThemedIcon,
-} from './DynamicIcons.styled'
+import IconsGrid from '@Atoms/IconGrid'
+import IconGridItem from '@Atoms/IconGridItem'
+import DynamicIcon, { DynamicIconProps } from './DynamicIcon'
 
 export type DynamicIconsProps = DynamicIconProps & {
   title: string
@@ -22,25 +15,19 @@ const DynamicIcons: FC<DynamicIconsProps> = ({
   size,
   path,
 }) => (
-  <IconGrid>
-    <IconGridTitle>{title}</IconGridTitle>
-    <GridContainer>
-      {iconsNames.map((name: string) => (
-        <IconContainer key={name}>
-          <IconPlaceHolder>
-            <ThemedIcon
-              path={path}
-              name={name}
-              fill="#fff"
-              size={size}
-              data-test={name}
-            />
-          </IconPlaceHolder>
-          <IconName>{name}</IconName>
-        </IconContainer>
-      ))}
-    </GridContainer>
-  </IconGrid>
+  <IconsGrid title={title}>
+    {iconsNames.map((name: string) => (
+      <IconGridItem key={name} name={name}>
+        <DynamicIcon
+          path={path}
+          name={name}
+          fill="#fff"
+          size={size}
+          data-test={name}
+        />
+      </IconGridItem>
+    ))}
+  </IconsGrid>
 )
 
 export default DynamicIcons

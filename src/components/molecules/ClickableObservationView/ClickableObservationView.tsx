@@ -1,10 +1,5 @@
 import { FC, PropsWithChildren, ReactNode } from 'react'
 import { ReactComponent as Icon } from '@Svg/weather/large/t01n.svg'
-import {
-  Description,
-  IconContainer,
-  Title,
-} from './ClickableObservationView.styled'
 
 export type ClickableObservationViewProps = {
   title: ReactNode
@@ -19,13 +14,15 @@ const ClickableObservationView: FC<
   PropsWithChildren<ClickableObservationViewProps>
 > = ({ title, description }) => (
   <div>
-    <IconContainer>
+    <div className="w-[128px]">
       <Icon aria-hidden />
-    </IconContainer>
-    <Title>
+    </div>
+    <h2 className="font-mono font-medium mb-0.5">
       {title} <span>-&gt;</span>
-    </Title>
-    <Description>{description}</Description>
+    </h2>
+    <p className="font-mono font-normal opacity-60 text-[0.9rem] leading-normal max-w-[30ch] m-0">
+      {description}
+    </p>
   </div>
 )
 

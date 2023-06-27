@@ -2,7 +2,7 @@ import { FC, PropsWithChildren, ReactNode } from 'react'
 import Link from 'next/link'
 import type { LinkProps } from 'next/link'
 
-import ClickableObservationView from '@Molecules/ClickableObservationView/ClickableObservationView'
+import ClickableObservationView from '@Molecules/ClickableObservationView'
 
 // See what has been done for link or anchor
 export type ClickableObservationCardProps = LinkProps & {

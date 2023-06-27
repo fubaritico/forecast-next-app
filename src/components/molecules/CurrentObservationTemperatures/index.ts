@@ -1,0 +1,3 @@
+import CurrentObservationsTemperatures from './CurrentObservationsTemperatures'
+
+export default CurrentObservationsTemperatures

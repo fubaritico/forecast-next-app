@@ -1,10 +1,10 @@
 'use client'
 
 import { FC } from 'react'
-import PanelBackground from '@Atoms/PanelBackground/PanelBackground'
-import DetailsSection from '@Molecules/DetailsSection/DetailsSection'
-import ChancesOfRainSection from '@Molecules/ChancesOfRainSection/ChancesOfRainSection'
-import DailyForecastsSection from '@Molecules/DailyForecastsSection/DailyForecastsSection'
+import PanelBackground from '@Atoms/PanelBackground'
+import DetailsSection from '@Molecules/DetailsSection'
+import ChancesOfRainSection from '@Molecules/ChancesOfRainSection'
+import DailyForecastsSection from '@Molecules/DailyForecastsSection'
 
 export type MoreDetailsPanelProps = {
   weather: string
@@ -26,7 +26,7 @@ const MoreDetailsPanel: FC<MoreDetailsPanelProps> = ({
   dailyForecasts,
   chancesOfRain,
 }) => (
-  <PanelBackground weather={weather as string}>
+  <PanelBackground weatherIconName={weather as string}>
     <DetailsSection {...details} />
     <ChancesOfRainSection data={chancesOfRain} />
     <DailyForecastsSection data={dailyForecasts} />

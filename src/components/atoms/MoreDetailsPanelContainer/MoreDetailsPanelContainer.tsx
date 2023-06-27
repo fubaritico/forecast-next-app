@@ -1,10 +1,9 @@
 'use client'
 
 import { FC, PropsWithChildren } from 'react'
-import { Root } from './MoreDetailsPanelContainer.styled'
 
 const MoreDetailsPanelContainer: FC<PropsWithChildren> = ({ children }) => (
-  <Root>{children}</Root>
+  <div className="flex flex-row p-10">{children}</div>
 )
 
 export default MoreDetailsPanelContainer

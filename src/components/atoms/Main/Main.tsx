@@ -1,10 +1,11 @@
 'use client'
 
 import { FC, PropsWithChildren } from 'react'
-import Default from './Main.styled'
 
 const Main: FC<PropsWithChildren> = ({ children }) => (
-  <Default>{children}</Default>
+  <main className="flex flex-col justify-center items-center p-10 min-h-screen">
+    {children}
+  </main>
 )
 
 export default Main

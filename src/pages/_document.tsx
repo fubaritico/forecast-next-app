@@ -8,252 +8,252 @@ class AppDocument extends Document {
         <Head>
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-100.eot"
+            href="/app/fonts/inter-v12-latin-100.eot"
             as="font"
             type="font/eot"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-100.ttf"
+            href="/app/fonts/inter-v12-latin-100.ttf"
             as="font"
             type="font/ttf"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-100.woff"
+            href="/app/fonts/inter-v12-latin-100.woff"
             as="font"
             type="font/woff"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-100.woff2"
+            href="/app/fonts/inter-v12-latin-100.woff2"
             as="font"
             type="font/woff2"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-200.eot"
+            href="/app/fonts/inter-v12-latin-200.eot"
             as="font"
             type="font/eot"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-200.ttf"
+            href="/app/fonts/inter-v12-latin-200.ttf"
             as="font"
             type="font/ttf"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-200.woff"
+            href="/app/fonts/inter-v12-latin-200.woff"
             as="font"
             type="font/woff"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-200.woff2"
+            href="/app/fonts/inter-v12-latin-200.woff2"
             as="font"
             type="font/woff2"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-300.eot"
+            href="/app/fonts/inter-v12-latin-300.eot"
             as="font"
             type="font/eot"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-300.ttf"
+            href="/app/fonts/inter-v12-latin-300.ttf"
             as="font"
             type="font/ttf"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-300.woff"
+            href="/app/fonts/inter-v12-latin-300.woff"
             as="font"
             type="font/woff"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-300.woff2"
+            href="/app/fonts/inter-v12-latin-300.woff2"
             as="font"
             type="font/woff2"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-500.eot"
+            href="/app/fonts/inter-v12-latin-500.eot"
             as="font"
             type="font/eot"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-500.ttf"
+            href="/app/fonts/inter-v12-latin-500.ttf"
             as="font"
             type="font/ttf"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-500.woff"
+            href="/app/fonts/inter-v12-latin-500.woff"
             as="font"
             type="font/woff"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-500.woff2"
+            href="/app/fonts/inter-v12-latin-500.woff2"
             as="font"
             type="font/woff2"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-600.eot"
+            href="/app/fonts/inter-v12-latin-600.eot"
             as="font"
             type="font/eot"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-600.ttf"
+            href="/app/fonts/inter-v12-latin-600.ttf"
             as="font"
             type="font/ttf"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-600.woff"
+            href="/app/fonts/inter-v12-latin-600.woff"
             as="font"
             type="font/woff"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-600.woff2"
+            href="/app/fonts/inter-v12-latin-600.woff2"
             as="font"
             type="font/woff2"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-700.eot"
+            href="/app/fonts/inter-v12-latin-700.eot"
             as="font"
             type="font/eot"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-700.ttf"
+            href="/app/fonts/inter-v12-latin-700.ttf"
             as="font"
             type="font/ttf"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-700.woff"
+            href="/app/fonts/inter-v12-latin-700.woff"
             as="font"
             type="font/woff"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-700.woff2"
+            href="/app/fonts/inter-v12-latin-700.woff2"
             as="font"
             type="font/woff2"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-800.eot"
+            href="/app/fonts/inter-v12-latin-800.eot"
             as="font"
             type="font/eot"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-800.ttf"
+            href="/app/fonts/inter-v12-latin-800.ttf"
             as="font"
             type="font/ttf"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-800.woff"
+            href="/app/fonts/inter-v12-latin-800.woff"
             as="font"
             type="font/woff"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-800.woff2"
+            href="/app/fonts/inter-v12-latin-800.woff2"
             as="font"
             type="font/woff2"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-900.eot"
+            href="/app/fonts/inter-v12-latin-900.eot"
             as="font"
             type="font/eot"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-900.ttf"
+            href="/app/fonts/inter-v12-latin-900.ttf"
             as="font"
             type="font/ttf"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-900.woff"
+            href="/app/fonts/inter-v12-latin-900.woff"
             as="font"
             type="font/woff"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-900.woff2"
+            href="/app/fonts/inter-v12-latin-900.woff2"
             as="font"
             type="font/woff2"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-regular.eot"
+            href="/app/fonts/inter-v12-latin-regular.eot"
             as="font"
             type="font/eot"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-regular.ttf"
+            href="/app/fonts/inter-v12-latin-regular.ttf"
             as="font"
             type="font/ttf"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-regular.woff"
+            href="/app/fonts/inter-v12-latin-regular.woff"
             as="font"
             type="font/woff"
             crossOrigin=""
           />
           <link
             rel="preload"
-            href="/fonts/inter-v12-latin-regular.woff2"
+            href="/app/fonts/inter-v12-latin-regular.woff2"
             as="font"
             type="font/woff2"
             crossOrigin=""

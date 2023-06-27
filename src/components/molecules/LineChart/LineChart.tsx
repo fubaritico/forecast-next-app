@@ -1,11 +1,10 @@
+import './styles.css'
 import { FC, PropsWithChildren } from 'react'
 import Chart from 'react-apexcharts'
 import useLineChartConfig, {
   ExtraLineChartConfigParams,
   LineChartConfigParams,
 } from './hooks/useLineChartConfig'
-
-import ChartLineWrapper from './LineChart.styled'
 
 export type LineChartProps = LineChartConfigParams<number[]> &
   ExtraLineChartConfigParams & {
@@ -28,9 +27,9 @@ const LineChart: FC<PropsWithChildren<LineChartProps>> = ({
   return (
     <>
       {GradientDefinitions}
-      <ChartLineWrapper aria-label={ariaLabel}>
+      <div className="chart-wrapper" aria-label={ariaLabel}>
         <Chart options={config} series={series} height="100%" />
-      </ChartLineWrapper>
+      </div>
     </>
   )
 }

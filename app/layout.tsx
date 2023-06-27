@@ -5,6 +5,10 @@ import Main from '@Atoms/Main'
 import StyledComponentsRegistry from '../lib/registery'
 import { Providers } from './providers'
 
+import { HelveticaNeueLT, Inter } from './localFonts'
+
+import './globals.css'
+
 export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
@@ -18,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${HelveticaNeueLT.variable} ${Inter.variable}`}>
       <body>
         <StyledComponentsRegistry>
           <Providers>

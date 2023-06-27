@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, FC } from 'react'
 import { ReactComponent as PlaceHolderIcon } from '@Svg/weather/small/placeholder.svg'
 
 export type DynamicIconProps = {
+  className?: string
   path: string
   name: string
   size?: number | string
@@ -9,6 +10,7 @@ export type DynamicIconProps = {
 }
 
 const DynamicIcon: FC<DynamicIconProps> = ({
+  className,
   path,
   name,
   size = '100%',
@@ -39,12 +41,28 @@ const DynamicIcon: FC<DynamicIconProps> = ({
   }, [path, name])
 
   if (loading) {
-    return <PlaceHolderIcon width={size} height={size} fill={fill} {...rest} />
+    return (
+      <PlaceHolderIcon
+        className={className}
+        width={size}
+        height={size}
+        fill={fill}
+        {...rest}
+      />
+    )
   }
 
   if (!loading && ImportedIconRef.current) {
     const { current: ImportedIcon } = ImportedIconRef
-    return <ImportedIcon width={size} height={size} fill={fill} {...rest} />
+    return (
+      <ImportedIcon
+        className={className}
+        width={size}
+        height={size}
+        fill={fill}
+        {...rest}
+      />
+    )
   }
 
   return null

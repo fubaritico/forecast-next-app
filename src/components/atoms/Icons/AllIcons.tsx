@@ -1,14 +1,7 @@
 import React, { FC } from 'react'
 import { getDsIcons, IconsGroup } from '@Svg/allIcons'
-import {
-  GridContainer,
-  IconGridTitle,
-  IconName,
-  IconGrid,
-  IconContainer,
-  IconPlaceHolder,
-  IconWrapper,
-} from './AllIcons.styled'
+import IconsGrid from '@Atoms/IconGrid'
+import IconGridItem from '@Atoms/IconGridItem'
 
 export type AllIconsProps = {
   title: string
@@ -24,24 +17,16 @@ const AllIcons: FC<AllIconsProps> = ({
   const groupIcons = getDsIcons(iconGroupName)
 
   return (
-    <>
-      <IconGrid>
-        <IconGridTitle>{title}</IconGridTitle>
-        <GridContainer>
-          {groupIcons &&
-            Object.entries(groupIcons).map(([name, Icon]) => (
-              <IconContainer data-label={name} key={name}>
-                <IconPlaceHolder>
-                  <IconWrapper width={iconsSize}>
-                    <Icon role="img" data-test={name} />
-                  </IconWrapper>
-                </IconPlaceHolder>
-                <IconName>{name}</IconName>
-              </IconContainer>
-            ))}
-        </GridContainer>
-      </IconGrid>
-    </>
+    <IconsGrid title={title}>
+      {groupIcons &&
+        Object.entries(groupIcons).map(([name, Icon]) => (
+          <IconGridItem key={name} name={name}>
+            <span style={{ width: iconsSize }}>
+              <Icon className="fill-white" data-test={name} role="img" />
+            </span>
+          </IconGridItem>
+        ))}
+    </IconsGrid>
   )
 }
 

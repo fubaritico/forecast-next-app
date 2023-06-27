@@ -1,19 +1,16 @@
 import React, { FC } from 'react'
-import {
-  StyledSectionTitle,
-  ForecastsContainer,
-  Root,
-} from '@Molecules/DailyForecastsSection/DailyForecastsSection.styled'
-import DailyForecast from '@Molecules/DailyForecast/DailyForecast'
+
+import DailyForecast from '@Molecules/DailyForecast'
+import SectionTitle from '@Atoms/SectionTitle'
 
 type DailyForecastsSectionProps = {
   data: MappedForecast[]
 }
 
 const DailyForecastsSection: FC<DailyForecastsSectionProps> = ({ data }) => (
-  <Root>
-    <StyledSectionTitle title="Next 7 days" />
-    <ForecastsContainer>
+  <section className="flex flex-row flex-wrap justify-between gap-2 m-4">
+    <SectionTitle title="Next 7 days" />
+    <div className="flex flex-row flex-nowrap w-full">
       {data.map(
         ({
           apparentMaximumTemperature,
@@ -29,12 +26,12 @@ const DailyForecastsSection: FC<DailyForecastsSectionProps> = ({ data }) => (
             apparentMaximumTemperature={apparentMaximumTemperature}
             chancesOfRain={chancesOfRain}
             timestampLocal={timestampLocal}
-            weatherIcon={weatherIcon}
+            weatherIconName={weatherIcon}
           />
         )
       )}
-    </ForecastsContainer>
-  </Root>
+    </div>
+  </section>
 )
 
 export default DailyForecastsSection

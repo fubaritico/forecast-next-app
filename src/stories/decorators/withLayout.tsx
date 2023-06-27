@@ -4,23 +4,15 @@ import { ReactRenderer } from '@storybook/react'
 
 import Grid from '@Atoms/Grid/Grid'
 import MainLayout from '@Components/atoms/Main'
-import styled from 'styled-components'
 import ThemeProvider from '@Styles/ThemeProvider'
-
-const PaddedContainer = styled.div`
-  display: flex;
-  padding: 2rem;
-  min-height: 100vh;
-  flex-flow: row wrap;
-`
 
 export const withPadding = (
   StoryFn: PartialStoryFn<ReactRenderer>,
   context: JSX.IntrinsicAttributes
 ) => (
-  <PaddedContainer>
+  <div className="flex p-5 min-h-screen flex-row flex-wrap">
     <StoryFn {...context} />
-  </PaddedContainer>
+  </div>
 )
 
 export const withGrid = (
@@ -41,7 +33,7 @@ export const withMainLayout = (
   </MainLayout>
 )
 
-export const withTheme = (
+export const withStyledComponentsTheme = (
   StoryFn: PartialStoryFn<ReactRenderer>,
   context: JSX.IntrinsicAttributes
 ) => (

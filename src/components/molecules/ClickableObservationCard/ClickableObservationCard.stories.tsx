@@ -1,5 +1,5 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { withGrid, withPadding } from '@Decorators/withLayout'
 import ClickableObservationCard, {
   ClickableObservationCardProps,
@@ -12,13 +12,18 @@ export default {
     layout: 'fullscreen',
   },
   decorators: [withPadding, withGrid],
-} as ComponentMeta<typeof ClickableObservationCard>
+} as Meta<typeof ClickableObservationCard>
 
-const Template: ComponentStory<typeof ClickableObservationCard> = (
-  args: ClickableObservationCardProps
-) => <ClickableObservationCard {...args} />
+type Story = StoryObj<typeof ClickableObservationCard>
 
-export const AsAnInternalLink = Template.bind({})
+const storyRenderer = (args: ClickableObservationCardProps) => (
+  <ClickableObservationCard {...args} />
+)
+
+export const AsAnInternalLink: Story = {
+  render: storyRenderer,
+}
+
 AsAnInternalLink.args = {
   href: '/details/moscow',
   title: 'Moscow',

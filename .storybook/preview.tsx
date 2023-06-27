@@ -1,10 +1,14 @@
+import '../app/globals.css'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import * as NextImage from 'next/image'
 import Theme from '../src/styles/Theme'
 import GlobalStyle from '../src/styles/Global'
-import { Preview } from '@storybook/react'
+import { Preview, ReactRenderer } from '@storybook/react'
 import { StoryFn } from '@storybook/react'
+import { withThemeByDataAttribute } from '@storybook/addon-styling'
+import { DecoratorFunction } from '@storybook/types'
+import { withFonts } from '@Decorators/withFonts'
 
 const OriginalNextImage = NextImage.default
 
@@ -24,7 +28,21 @@ const withThemeProvider = (Story: StoryFn, context: any) => {
     </ThemeProvider>
   )
 }
-const decorators = [withThemeProvider]
+
+const withTailwind = withThemeByDataAttribute({
+  themes: {
+    light: 'light',
+    dark: 'dark',
+  },
+  defaultTheme: 'light',
+  attributeName: 'data-mode',
+})
+
+const decorators = [
+  withThemeProvider,
+  withTailwind as DecoratorFunction<ReactRenderer, { [x: string]: any }>,
+  withFonts as DecoratorFunction<ReactRenderer, { [x: string]: any }>,
+]
 
 // Global default parameter
 const parameters = {
@@ -34,6 +52,9 @@ const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+  },
+  nextjs: {
+    appDirectory: true,
   },
 }
 

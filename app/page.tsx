@@ -1,4 +1,4 @@
-import HomePageContent from '@Organisms/PageContent/HomePageContent'
+import HomePageContent from '@Organisms/PageContent/HomePage'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
