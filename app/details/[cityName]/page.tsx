@@ -15,7 +15,6 @@ const getObservationDetails = async ({
   searchParams,
 }: PageContext): Promise<RequestResponse<GetDetailedForecatsResponse>> => {
   const requestParams = { ...searchParams, ...params }
-  console.log('getObservationDetails - params: ', params)
 
   try {
     const response: GetObservationDetailsAxiosResponse =

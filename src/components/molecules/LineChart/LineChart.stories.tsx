@@ -1,15 +1,12 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import {
-  withMainLayout,
-  withStyledComponentsTheme,
-} from '@Decorators/withLayout'
+import { withMainLayout } from '@Decorators/withLayout'
 import LineChart, { LineChartProps } from './LineChart'
 
 export default {
   title: 'Components/LineChart',
   component: LineChart,
-  decorators: [withStyledComponentsTheme, withMainLayout],
+  decorators: [withMainLayout],
 } as ComponentMeta<typeof LineChart>
 
 export const Default: ComponentStory<typeof LineChart> = (

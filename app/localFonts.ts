@@ -66,5 +66,3 @@ export const HelveticaNeueLT = localFont({
   ],
   variable: '--font-helvetica-neue-lt',
 })
-
-console.log('[debug] localFont - FONTS: ', { HelveticaNeueLT, Inter })

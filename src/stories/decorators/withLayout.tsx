@@ -3,8 +3,7 @@ import { PartialStoryFn } from '@storybook/csf'
 import { ReactRenderer } from '@storybook/react'
 
 import Grid from '@Atoms/Grid/Grid'
-import MainLayout from '@Components/atoms/Main'
-import ThemeProvider from '@Styles/ThemeProvider'
+import Main from '@Components/atoms/Main'
 
 export const withPadding = (
   StoryFn: PartialStoryFn<ReactRenderer>,
@@ -28,16 +27,7 @@ export const withMainLayout = (
   StoryFn: PartialStoryFn<ReactRenderer>,
   context: JSX.IntrinsicAttributes
 ) => (
-  <MainLayout>
+  <Main>
     <StoryFn {...context} />
-  </MainLayout>
-)
-
-export const withStyledComponentsTheme = (
-  StoryFn: PartialStoryFn<ReactRenderer>,
-  context: JSX.IntrinsicAttributes
-) => (
-  <ThemeProvider>
-    <StoryFn {...context} />
-  </ThemeProvider>
+  </Main>
 )

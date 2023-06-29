@@ -3,7 +3,6 @@
     "baseUrl": ".",
     "paths": {
       "@App/*": ["app/*"],
-      "@Lib/*": ["lib/*"],
       "@Api": ["src/api"],
       "@Api/*": ["src/api/*"],
       "@ApiRoutes": ["src/pages/api"],
@@ -23,7 +22,6 @@
       "@Requests": ["src/api/requests"],
       "@Requests/*": ["src/api/requests/*"],
       "@Services/*": ["src/services/*"],
-      "@Styles/*": ["src/styles/*"],
       "@Stubs/*": ["src/stubs/*"],
       "@Svg/*": ["src/svg/*"],
       "@Test/*": ["src/test/*"],

@@ -1,7 +1,7 @@
 'use client'
 
 import { FC, PropsWithChildren } from 'react'
-import { WEATHER_GRADIENTS } from '@Styles/constants/gradients'
+import { WEATHER_GRADIENTS } from './gradients'
 
 type PanelBackgroundProps = {
   /** weather icon name as a basis to choose gradient colors according to current weather */

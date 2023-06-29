@@ -1,15 +1,15 @@
 .chart-wrapper {
-    width: 100%;
+  width: 100%;
 }
 
 .chart-wrapper > div {
-    margin-bottom: -15px;
+  margin-bottom: -15px;
 }
 
 .chart-wrapper .apexcharts-gridlines-vertical line {
-    stroke: url(#gridGradient);
+  stroke: url(#gridGradient);
 }
 
 .chart-wrapper .no-pointer-events {
-    pointer-events: none;
+  pointer-events: none;
 }

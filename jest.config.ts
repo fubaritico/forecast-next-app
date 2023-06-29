@@ -14,12 +14,12 @@ const createJestConfig = nextJest({
 
 // Add any custom config to be passed to Jest
 const customJestConfig: Config = {
+  verbose: true,
   preset: 'ts-jest',
   testEnvironment: 'jest-environment-jsdom',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.afterEnv.ts'], // Add more setup options before each test is run
   setupFiles: ['<rootDir>/jest.setup.ts'], // Stub native javascript features
   testRegex: ['(/src/.*(test|spec))\\.[jt]sx?$'],
-  // testMatch: ['**/*.test.ts?(x)'],
   testTimeout: 80_000,
   moduleNameMapper: {
     ...moduleNameMapper,

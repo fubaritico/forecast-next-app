@@ -1,5 +1,4 @@
 /// <reference types="api.d.ts" />
-import 'styled-components'
 import { SVGProps, ReactElement, FC } from 'react'
 import { NextPage } from 'next'
 import { AxiosError } from 'axios'
@@ -121,15 +120,5 @@ declare global {
   export type IconID = {
     iconGroupName: string
     iconName: string
-  }
-}
-
-declare module 'styled-components' {
-  export interface DefaultTheme {
-    light: IThemeProps
-    dark: IThemeProps
-    breakpoints: {
-      [name in string]: number
-    }
   }
 }

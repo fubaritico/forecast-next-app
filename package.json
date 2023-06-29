@@ -4,8 +4,8 @@
   "private": true,
   "keywords": [
     "react",
-    "next",
-    "node",
+    "nextjs13",
+    "typescript",
     "express",
     "weather",
     "forecast"
@@ -22,9 +22,11 @@
     "commit": "git-cz",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "jest --verbose --setupFiles ./jest.setup.ts",
+    "test": "npm run requirements-check && jest --verbose --setupFiles ./jest.setup.ts",
     "test:coverage": "npm run test -- --coverage --watchAll=false",
-    "icons": "node ./scripts/generateIcons.mjs"
+    "icons": "node ./scripts/generateIcons.mjs",
+    "requirements-check": "babel-node check-node-version.js",
+    "postinstall": "npm run requirements-check"
   },
   "dependencies": {
     "@googlemaps/react-wrapper": "1.1.35",
@@ -35,17 +37,17 @@
     "clsx": "^1.2.1",
     "handlebars": "4.7.7",
     "next": "13.4.7",
-    "polished": "4.2.2",
     "react": "18.2.0",
     "react-apexcharts": "1.4.0",
     "react-dom": "18.2.0",
     "react-grid-system": "^8.1.9",
     "react-resizable": "3.0.4",
-    "styled-components": "6.0.0-rc.6",
+    "semver": "^7.5.3",
     "use-deep-compare-effect": "1.8.1"
   },
   "devDependencies": {
-    "@babel/core": "7.22.5",
+    "@babel/core": "^7.22.5",
+    "@babel/node": "^7.22.5",
     "@commitlint/cli": "17.6.6",
     "@commitlint/config-conventional": "17.6.6",
     "@storybook/addon-actions": "7.0.23",
@@ -67,7 +69,6 @@
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "@types/react-resizable": "3.0.3",
-    "@types/styled-components": "5.1.26",
     "@typescript-eslint/eslint-plugin": "5.60.0",
     "@typescript-eslint/parser": "5.60.0",
     "autoprefixer": "^10.4.14",
@@ -109,6 +110,10 @@
     "typescript": "4.9.4",
     "url-loader": "4.1.1",
     "webpack": "5.88.0"
+  },
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=16.0.0"
   },
   "lint-staged": {
     "*.@(ts|tsx)": [

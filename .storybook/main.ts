@@ -38,10 +38,6 @@ const config: StorybookConfig = {
       to: '/images',
     },
     {
-      from: '../public/app/fonts',
-      to: '/app/fonts',
-    },
-    {
       from: '../app/fonts',
       to: '/app/fonts',
     },
