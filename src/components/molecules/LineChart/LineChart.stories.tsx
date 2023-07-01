@@ -1,17 +1,21 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { withMainLayout } from '@Decorators/withLayout'
+import { Meta, StoryObj } from '@storybook/react'
+import { withLayout } from '@Decorators/withLayout'
 import LineChart, { LineChartProps } from './LineChart'
 
 export default {
-  title: 'Components/LineChart',
+  title: 'Components/Molecules/LineChart',
   component: LineChart,
-  decorators: [withMainLayout],
-} as ComponentMeta<typeof LineChart>
+  decorators: [withLayout],
+} as Meta<typeof LineChart>
 
-export const Default: ComponentStory<typeof LineChart> = (
-  args: LineChartProps
-) => <LineChart {...args} />
+type Story = StoryObj<typeof LineChart>
+
+const storyRenderer = (args: LineChartProps) => <LineChart {...args} />
+
+export const Default: Story = {
+  render: storyRenderer,
+}
 
 Default.args = {
   color: '#ffffff',

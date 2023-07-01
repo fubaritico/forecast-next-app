@@ -23,11 +23,11 @@ export const withGrid = (
   </Grid>
 )
 
-export const withMainLayout = (
+export const withLayout = (
   StoryFn: PartialStoryFn<ReactRenderer>,
   context: JSX.IntrinsicAttributes
 ) => (
-  <Main>
+  <Main className="bg-slate-300">
     <StoryFn {...context} />
   </Main>
 )

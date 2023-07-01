@@ -97,7 +97,7 @@
     "husky": "8.0.3",
     "jest-canvas-mock": "2.4.0",
     "jest-environment-jsdom": "29.3.1",
-    "lint-staged": "13.1.0",
+    "lint-staged": "13.2.3",
     "postcss": "^8.4.24",
     "prettier": "2.8.8",
     "server-only": "0.0.1",

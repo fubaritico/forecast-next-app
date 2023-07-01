@@ -1,6 +1,6 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { withMainLayout, withPadding } from '@Decorators/withLayout'
+import { Meta, StoryObj } from '@storybook/react'
+import { withLayout, withPadding } from '@Decorators/withLayout'
 
 import AllIcons, { AllIconsProps } from './AllIcons'
 
@@ -9,15 +9,18 @@ export default {
   component: AllIcons,
   parameters: {
     layout: 'fullscreen',
+    docs: { disable: true },
   },
-  decorators: [withPadding, withMainLayout],
-} as ComponentMeta<typeof AllIcons>
+  decorators: [withPadding, withLayout],
+} as Meta<typeof AllIcons>
 
-const Template: ComponentStory<typeof AllIcons> = (args: AllIconsProps) => (
-  <AllIcons {...args} />
-)
+type Story = StoryObj<typeof AllIcons>
 
-export const Small = Template.bind({})
+const storyRenderer = (args: AllIconsProps) => <AllIcons {...args} />
+
+export const Small: Story = {
+  render: storyRenderer,
+}
 Small.storyName = 'Small weather icons'
 Small.args = {
   iconGroupName: 'WeatherSmall',
@@ -25,7 +28,9 @@ Small.args = {
   title: 'Small weather icons (daily forecast)',
 }
 
-export const Medium = Template.bind({})
+export const Medium: Story = {
+  render: storyRenderer,
+}
 Medium.storyName = 'Medium weather icons'
 Medium.args = {
   iconGroupName: 'WeatherMedium',
@@ -33,7 +38,9 @@ Medium.args = {
   title: 'Medium icons (current observation)',
 }
 
-export const Large = Template.bind({})
+export const Large: Story = {
+  render: storyRenderer,
+}
 Large.storyName = 'Large weather icons'
 Large.args = {
   iconGroupName: 'WeatherLarge',
@@ -41,7 +48,9 @@ Large.args = {
   title: 'Large weather icons (not yet defined where to be used)',
 }
 
-export const DetailSmall = Template.bind({})
+export const DetailSmall: Story = {
+  render: storyRenderer,
+}
 DetailSmall.storyName = 'Small detail panel UI'
 DetailSmall.args = {
   iconGroupName: 'DetailSmall',

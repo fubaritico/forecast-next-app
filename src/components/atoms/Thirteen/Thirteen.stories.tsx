@@ -1,17 +1,21 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { withPadding } from '@Decorators/withLayout'
 import Thirteen from './Thirteen'
 
 export default {
-  title: 'Components/Thirteen',
+  title: 'Components/Atoms/Thirteen',
   component: Thirteen,
   parameters: {
     layout: 'fullscreen',
   },
   decorators: [withPadding],
-} as ComponentMeta<typeof Thirteen>
+} as Meta<typeof Thirteen>
 
-const Template: ComponentStory<typeof Thirteen> = () => <Thirteen />
+type Story = StoryObj<typeof Thirteen>
 
-export const Default = Template.bind({})
+const storyRenderer = () => <Thirteen />
+
+export const Default: Story = {
+  render: storyRenderer,
+}

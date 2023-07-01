@@ -1,24 +1,34 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { withMainLayout, withPadding } from '@Decorators/withLayout'
+import { Meta, StoryObj } from '@storybook/react'
+import { withLayout, withPadding } from '@Decorators/withLayout'
 import { currentObservationPanel } from '@Stubs/details'
 import CurrentObservationPanel, {
   CurrentObservationPanelProps,
 } from './CurrentObservationPanel'
 
 export default {
-  title: 'Components/CurrentObservationPanel',
+  title: 'Components/Organisms/CurrentObservationPanel',
   component: CurrentObservationPanel,
   parameters: {
     layout: 'fullscreen',
+    actions: { argTypesRegex: '^on.*' },
   },
-  decorators: [withPadding, withMainLayout],
-} as ComponentMeta<typeof CurrentObservationPanel>
-const Template: ComponentStory<typeof CurrentObservationPanel> = (
-  args: CurrentObservationPanelProps
-) => <CurrentObservationPanel {...args} />
+  decorators: [withPadding, withLayout],
+  argTypes: {
+    onMenuClick: { action: 'onMenuClick clicked' },
+    onMoreClick: { action: 'onMoreClick clicked' },
+  },
+} as Meta<typeof CurrentObservationPanel>
 
-export const Default = Template.bind({})
+type Story = StoryObj<typeof CurrentObservationPanel>
+
+const storyRenderer = (args: CurrentObservationPanelProps) => (
+  <CurrentObservationPanel {...args} />
+)
+
+export const Default: Story = {
+  render: storyRenderer,
+}
 Default.args = {
   data: currentObservationPanel,
 }

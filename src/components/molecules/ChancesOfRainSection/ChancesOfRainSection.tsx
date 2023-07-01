@@ -3,7 +3,7 @@ import useMapChartData from '@Molecules/LineChart/hooks/useMapChartData'
 import useNoSsrLineChart from '@Molecules/LineChart/hooks/useNoSsrLineChart'
 import SectionTitle from '@Atoms/SectionTitle'
 
-type ChancesOfRainSectionProps = {
+export type ChancesOfRainSectionProps = {
   data: ChartData[]
 }
 

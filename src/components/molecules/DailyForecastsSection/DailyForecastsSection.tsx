@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 import DailyForecast from '@Molecules/DailyForecast'
 import SectionTitle from '@Atoms/SectionTitle'
 
-type DailyForecastsSectionProps = {
+export type DailyForecastsSectionProps = {
   data: MappedForecast[]
 }
 

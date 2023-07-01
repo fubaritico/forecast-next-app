@@ -1,25 +1,34 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { withMainLayout, withPadding } from '@Decorators/withLayout'
+import { Meta, StoryObj } from '@storybook/react'
+import { withLayout, withPadding } from '@Decorators/withLayout'
 import { currentObservationPanel } from '@Stubs/details'
 import MoreDetailsPanel, { MoreDetailsPanelProps } from './MoreDetailsPanel'
 
+const { currentObservation, dailyForecasts, hourlyForecasts } =
+  currentObservationPanel
+
 export default {
-  title: 'Components/MoreDetailsPanel',
+  title: 'Components/Organisms/MoreDetailsPanel',
   component: MoreDetailsPanel,
   parameters: {
     layout: 'fullscreen',
   },
-  decorators: [withPadding, withMainLayout],
-} as ComponentMeta<typeof MoreDetailsPanel>
-const Template: ComponentStory<typeof MoreDetailsPanel> = (
-  args: MoreDetailsPanelProps
-) => <MoreDetailsPanel {...args} />
+  decorators: [withPadding, withLayout],
+} as Meta<typeof MoreDetailsPanel>
 
-export const Default = Template.bind({})
+type Story = StoryObj<typeof MoreDetailsPanel>
+
+const storyRenderer = (args: MoreDetailsPanelProps) => (
+  <MoreDetailsPanel {...args} />
+)
+
+export const Default: Story = {
+  render: storyRenderer,
+}
+
 Default.args = {
-  weather: currentObservationPanel.currentObservation.weatherIcon,
-  details: currentObservationPanel.currentObservation,
-  dailyForecasts: currentObservationPanel.dailyForecasts,
-  chancesOfRain: currentObservationPanel.hourlyForecasts.chancesOfRain,
+  weather: currentObservation.weatherIcon,
+  details: currentObservation,
+  dailyForecasts,
+  chancesOfRain: hourlyForecasts.chancesOfRain,
 }

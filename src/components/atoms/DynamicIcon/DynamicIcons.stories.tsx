@@ -1,7 +1,7 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { withMainLayout, withPadding } from '@Decorators/withLayout'
-import DynamicIcons from './DynamicIcons'
+import { Meta, StoryObj } from '@storybook/react'
+import { withLayout, withPadding } from '@Decorators/withLayout'
+import DynamicIcons, { DynamicIconsProps } from './DynamicIcons'
 import { smallIcons, mediumIcons, largeIcons } from './iconsGroups'
 
 export default {
@@ -9,14 +9,19 @@ export default {
   component: DynamicIcons,
   parameters: {
     layout: 'fullscreen',
+    docs: { disable: true },
   },
-  decorators: [withPadding, withMainLayout],
-} as ComponentMeta<typeof DynamicIcons>
-const Template: ComponentStory<typeof DynamicIcons> = (args) => (
-  <DynamicIcons {...args} />
-)
+  decorators: [withPadding, withLayout],
+} as Meta<typeof DynamicIcons>
 
-export const Small = Template.bind({})
+type Story = StoryObj<typeof DynamicIcons>
+
+const storyRenderer = (args: DynamicIconsProps) => <DynamicIcons {...args} />
+
+export const Small: Story = {
+  render: storyRenderer,
+}
+
 Small.storyName = 'Small weather icons'
 Small.args = {
   path: 'weather/small',
@@ -25,7 +30,9 @@ Small.args = {
   iconsNames: smallIcons,
 }
 
-export const Medium = Template.bind({})
+export const Medium: Story = {
+  render: storyRenderer,
+}
 Medium.storyName = 'Medium weather icons'
 Medium.args = {
   path: 'weather/medium',
@@ -34,7 +41,9 @@ Medium.args = {
   title: 'Medium icons (current observation)',
 }
 
-export const Large = Template.bind({})
+export const Large: Story = {
+  render: storyRenderer,
+}
 Large.storyName = 'Large weather icons'
 Large.args = {
   path: 'weather/large',

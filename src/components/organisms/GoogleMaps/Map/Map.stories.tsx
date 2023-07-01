@@ -1,22 +1,26 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { withMainLayout } from '@Decorators/withLayout'
-import Map from './Map'
+import { Meta, StoryObj } from '@storybook/react'
+import { withLayout } from '@Decorators/withLayout'
+import Map, { MapProps } from './Map'
 
 export default {
-  title: 'Components/Map',
+  title: 'Components/Organisms/Map',
   component: Map,
   parameters: {
     layout: 'fullscreen',
     actions: { argTypesRegex: '^on.*' },
   },
-  decorators: [withMainLayout],
+  decorators: [withLayout],
   argTypes: {
-    onClick: { action: 'clicked' },
-    onIdle: { action: 'idle' },
+    onClick: { action: 'Map clicked' },
+    onIdle: { action: 'Map idle' },
   },
-} as ComponentMeta<typeof Map>
+} as Meta<typeof Map>
 
-const Template: ComponentStory<typeof Map> = (args) => <Map {...args} />
+type Story = StoryObj<typeof Map>
 
-export const Default = Template.bind({})
+const storyRenderer = (args: MapProps) => <Map {...args} />
+
+export const Default: Story = {
+  render: storyRenderer,
+}
