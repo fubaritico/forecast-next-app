@@ -26,7 +26,8 @@
     "test:coverage": "npm run test -- --coverage --watchAll=false",
     "icons": "node ./scripts/generateIcons.mjs",
     "requirements-check": "babel-node check-node-version.js",
-    "postinstall": "npm run requirements-check"
+    "postinstall": "npm run requirements-check",
+    "audit": "npm audit --json | npm-audit-html"
   },
   "dependencies": {
     "@googlemaps/react-wrapper": "1.1.35",
