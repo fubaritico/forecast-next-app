@@ -8,9 +8,9 @@ export type DailyForecastsSectionProps = {
 }
 
 const DailyForecastsSection: FC<DailyForecastsSectionProps> = ({ data }) => (
-  <section className="flex flex-row flex-wrap justify-between gap-2 m-4">
+  <section className="flex flex-col justify-start gap-2 m-4">
     <SectionTitle title="Next 7 days" />
-    <div className="flex flex-row flex-nowrap w-full">
+    <div className="flex flex-row flex-nowrap justify-between w-full">
       {data.map(
         ({
           apparentMaximumTemperature,

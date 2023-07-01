@@ -19,13 +19,19 @@ const DailyForecast: FC<DailyForecastProps> = ({
   chancesOfRain,
   timestampLocal,
 }) => (
-  <div className="flex flex-row flex-wrap flex-0 justify-center">
+  <div className="flex flex-col flex-0 justify-center">
     {timestampLocal && (
-      <span className="text-[13px] font-mono font-normal text-center text-white w-full mb-2">
+      <span
+        aria-label={`Week day ${timestampLocal.weekDay}`}
+        className="text-[13px] font-mono font-normal text-center text-white w-full mb-2"
+      >
         {timestampLocal.weekDay}
       </span>
     )}
-    <span className="text-[12px] font-mono font-light text-center text-white w-full min-h-[15px]">
+    <span
+      aria-label={`Chances of rain ${chancesOfRain}`}
+      className="text-[12px] font-mono font-light text-center text-white w-full min-h-[15px]"
+    >
       {chancesOfRain}
     </span>
     <div className="h-[32px] w-[32px] mb-2">

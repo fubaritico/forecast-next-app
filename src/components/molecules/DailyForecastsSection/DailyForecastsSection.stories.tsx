@@ -12,7 +12,7 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-  decorators: [withPadding, withLayout],
+  decorators: [withLayout, withPadding],
 } as Meta<typeof DailyForecastsSection>
 
 type Story = StoryObj<typeof DailyForecastsSection>

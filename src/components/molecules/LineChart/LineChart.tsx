@@ -11,6 +11,17 @@ export type LineChartProps = LineChartConfigParams<number[]> &
     ariaLabel?: string
   }
 
+/**
+ * Update issues :
+ * ---------------
+ * @see https://stackoverflow.com/questions/71841390/how-to-fix-react-apex-chart-initial-mount-delay
+ *
+ * if you have to fetch, get or update data from somewhere try resizing the window object
+ * in the fetch/get/update data function. This will enforce to (re)render data
+ *
+ * window.dispatchEvent(new Event('resize'));
+ *
+ */
 const LineChart: FC<PropsWithChildren<LineChartProps>> = ({
   ariaLabel,
   height,

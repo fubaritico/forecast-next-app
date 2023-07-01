@@ -14,6 +14,13 @@ const createJestConfig = nextJest({
 
 // Add any custom config to be passed to Jest
 const customJestConfig: Config = {
+  collectCoverage: true,
+  collectCoverageFrom: ['./src/components/**'],
+  // coverageThreshold: {
+  //   global: {
+  //     lines: 80,
+  //   },
+  // },
   verbose: true,
   preset: 'ts-jest',
   testEnvironment: 'jest-environment-jsdom',

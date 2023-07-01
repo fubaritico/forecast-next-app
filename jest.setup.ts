@@ -1,10 +1,53 @@
 /* eslint-disable no-console */
 import { format } from 'util'
-
 // Used to declare and use global decorators and parameters, etc... (global config)
 import { setProjectAnnotations } from '@storybook/react'
 
 import globalStorybookConfig from './.storybook/preview'
+
+/**
+ * @See: https://github.com/apexcharts/react-apexcharts/issues/52
+ */
+// Mocks for react-apex-charts or other third party library depending on render on resize and svg rendering - START
+Object.defineProperty(window, 'ResizeObserver', {
+  writable: true,
+  value:
+    window.ResizeObserver ||
+    jest.fn().mockImplementation(() => ({
+      observe: jest.fn(),
+      unobserve: jest.fn(),
+      disconnect: jest.fn(),
+    })),
+})
+
+Object.defineProperty(global.SVGElement.prototype, 'getScreenCTM', {
+  writable: true,
+  value: jest.fn(),
+})
+
+Object.defineProperty(global.SVGElement.prototype, 'getBBox', {
+  writable: true,
+  value: jest.fn().mockReturnValue({
+    x: 0,
+    y: 0,
+  }),
+})
+
+Object.defineProperty(global.SVGElement.prototype, 'getComputedTextLength', {
+  writable: true,
+  value: jest.fn().mockReturnValue(0),
+})
+
+Object.defineProperty(global.SVGElement.prototype, 'createSVGMatrix', {
+  writable: true,
+  value: jest.fn().mockReturnValue({
+    x: 10,
+    y: 10,
+    inverse: () => {},
+    multiply: () => {},
+  }),
+})
+// Mocks for react-apex-charts or other third party library depending on render on resize and svg rendering - END
 
 setProjectAnnotations(globalStorybookConfig)
 
