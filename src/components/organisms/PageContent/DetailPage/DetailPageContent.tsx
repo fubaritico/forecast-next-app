@@ -19,7 +19,7 @@ import {
 } from 'next/navigation'
 
 import { getObservationDetailsRequest } from '@Api/getObservationsDetails'
-import { AxiosError, isAxiosError, RequestResponse } from '@Utils/error'
+import { AxiosError, isAxiosError, RequestResponse } from '@Utils/client/error'
 import CurrentObservationPanel from '@Organisms/CurrentObservationPanel'
 
 export type DetailPageContentProps = {

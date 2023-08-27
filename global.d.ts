@@ -1,4 +1,6 @@
-/// <reference types="api.d.ts" />
+/// <reference types="api-configuration.d.ts" />
+/// <reference types="bff.d.ts" />
+
 import { SVGProps, ReactElement, FC } from 'react'
 import { NextPage } from 'next'
 import { AxiosError } from 'axios'
@@ -121,4 +123,6 @@ declare global {
     iconGroupName: string
     iconName: string
   }
+
+  export type Nullable<T> = T | undefined
 }

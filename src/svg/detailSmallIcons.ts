@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // For all changes please modify scripts/iconsGroup.template.txt file first and regenerate.
-import svgLazyLoader from '@Utils/icons'
+import svgLazyLoader from '@Utils/client/icons'
 
 const DewPoint = svgLazyLoader('detail/small/dewPoint.svg')
 const FeelsLike = svgLazyLoader('detail/small/feelsLike.svg')

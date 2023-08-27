@@ -5,7 +5,7 @@ import { ReactComponent as PlaceHolderIcon } from '@Svg/weather/small/placeholde
 const svgLazyLoader = (subPath: string): LazyIcon => {
   const DynamicComponent = dynamic(
     async () =>
-      (await import(`../svg/${subPath.replace(/\.svg$/, '')}.svg`))
+      (await import(`../../svg/${subPath.replace(/\.svg$/, '')}.svg`))
         .ReactComponent,
     { loading: () => <PlaceHolderIcon />, ssr: false }
   )

@@ -2,7 +2,7 @@ import { getDefaultObservationsRequest } from '@Api/getDefaultObservationsReques
 
 import FrontPageContent from '@Organisms/PageContent/FrontPage'
 import { Metadata } from 'next'
-import { AxiosError, isAxiosError, RequestResponse } from '@Utils/error'
+import { AxiosError, isAxiosError, RequestResponse } from '@Utils/client/error'
 
 const getCurrentDefaultObservations = async (): Promise<
   RequestResponse<GetCurrentDefaultObservationsResponse>

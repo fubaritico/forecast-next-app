@@ -36,7 +36,7 @@ declare global {
       /** ID for iterations */
       id: string
       /**  Apparent/"Feels Like" temperature default (°C) */
-      temperature: string
+      temperature?: string
       /** Text weather description */
       weatherDescription: string
       /**
@@ -61,7 +61,7 @@ declare global {
       dateLocal?: DateProps
     }
 
-  type DetailedObservationData = {
+  type DetailedObservationData = Partial<{
     /** Apparent Maximum daily Temperature - default (°C) */
     apparentMaximumTemperature: string
     /** Apparent Minimum daily Temperature - default (°C) */
@@ -78,7 +78,7 @@ declare global {
     visibility: string
     /** Dewpoint (Average) - default (°C) */
     dewPoint: string
-  }
+  }>
 
   /** List of current observations */
   type GetCurrentDefaultObservationsResponse = MappedObservation[]
@@ -94,16 +94,16 @@ declare global {
 
   type LocalTimeStampProps = {
     /** Untouched value */
-    value: string
+    value?: string
     /** Formatted value like <i>9°C or 9°</i> */
     display: string
   }
 
   type ChartValue = {
     /** Untouched value */
-    value: number
+    value?: number
     /** Formatted value with unit */
-    display: string
+    display?: string
   }
 
   /** Chart data with time and value */

@@ -12,7 +12,7 @@ const useMapChartData = (
   if (Array.isArray(chartData)) {
     categories = chartData.map((forecast) => forecast?.timestampLocal?.display)
     serieData = chartData.map((forecast) =>
-      Math.round(forecast?.chartValue?.value)
+      forecast?.chartValue?.value ? Math.round(forecast?.chartValue?.value) : 0
     )
   }
 

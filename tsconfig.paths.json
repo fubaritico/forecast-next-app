@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {
+    "paths": {//
+      "@Lib/*": ["lib/*"],
       "@App/*": ["app/*"],
       "@Api": ["src/api"],
       "@Api/*": ["src/api/*"],
+      "@AppAPI/*": ["app/api/*"],
       "@ApiRoutes": ["src/pages/api"],
       "@ApiRoutes/*": ["src/pages/api/*"],
       "@Atoms/*": ["src/components/atoms/*"],

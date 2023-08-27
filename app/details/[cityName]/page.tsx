@@ -1,7 +1,7 @@
 import { getObservationDetailsRequest } from '@Api/getObservationsDetails'
 
 import { Metadata } from 'next'
-import { AxiosError, isAxiosError, RequestResponse } from '@Utils/error'
+import { AxiosError, isAxiosError, RequestResponse } from '@Utils/client/error'
 import React from 'react'
 import DetailPageContent from '@Organisms/PageContent/DetailPage'
 
@@ -15,6 +15,14 @@ const getObservationDetails = async ({
   searchParams,
 }: PageContext): Promise<RequestResponse<GetDetailedForecatsResponse>> => {
   const requestParams = { ...searchParams, ...params }
+
+  const routeHandlerResponse = await fetch(
+    `http://localhost:3000/api/weatherbit/forecasts/detail/${params.cityName}`
+  )
+  console.log(
+    '[cityName]/page.tsx - routeHandlerResponse: ',
+    routeHandlerResponse
+  )
 
   try {
     const response: GetObservationDetailsAxiosResponse =
