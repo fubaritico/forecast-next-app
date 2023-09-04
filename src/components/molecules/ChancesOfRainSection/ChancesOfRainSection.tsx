@@ -4,9 +4,9 @@ import React, { FC } from 'react'
 import type { LineChartProps } from '@Molecules/LineChart/LineChart'
 
 import SectionTitle from '@Atoms/SectionTitle'
-import LineChart from '@Molecules/LineChart'
 
 import useMapChartData from '@Molecules/LineChart/hooks/useMapChartData'
+import useNoSsrLineChart from '@Molecules/LineChart/hooks/useNoSsrLineChart'
 
 export type ChancesOfRainSectionProps = {
   data: ChartData[]
@@ -22,10 +22,15 @@ const ChancesOfRainSection: FC<ChancesOfRainSectionProps> = ({ data }) => {
     ariaLabel: 'Chart showing chances of rain',
   }
 
+  const LineChart = useNoSsrLineChart({
+    ...lineChartProps,
+    ariaLabel: 'chart showing temperatures forecasts',
+  })
+
   return (
     <section className="flex flex-col gap-2 m-4">
       <SectionTitle title="Chances of rain" />
-      <LineChart {...lineChartProps} />
+      <LineChart />
     </section>
   )
 }

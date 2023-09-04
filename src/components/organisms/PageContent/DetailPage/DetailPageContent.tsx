@@ -32,7 +32,7 @@ const DetailPageContent: FC<DetailPageContentProps> = ({ data }) => {
   const params = useParams()
   const searchParams: ReadonlyURLSearchParams | null = useSearchParams()
 
-  const getData = useCallback((): Promise<
+  const getData = useCallback(async (): Promise<
     RequestResponse<GetDetailedForecatsResponse>
   > => {
     const requestParams = { ...searchParams, ...params }
@@ -52,6 +52,25 @@ const DetailPageContent: FC<DetailPageContentProps> = ({ data }) => {
       .then((response) => setObservation(response))
       .catch((e) => setObservation(e as AxiosError))
   }, [data, getData])
+
+  /**
+   * Route handler test on client side
+   */
+  useEffect(() => {
+    const testHandler = async () => {
+      const routeHandlerResponse = await fetch(
+        `http://localhost:3000/api/weatherbit/forecasts/detail/${params?.cityName}`
+      )
+      // the body response has to be extracted with the json method asynchronously
+      const result = await routeHandlerResponse.json()
+      console.log(
+        'DetailPageContent::testHandler - routeHandlerResponse: ',
+        result
+      )
+    }
+
+    testHandler()
+  }, [])
 
   const onMenuClick: MouseEventHandler = (e: MouseEvent) => {
     console.log('CurrentObservationPanel::onMenuClick - e: ', e)

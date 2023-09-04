@@ -22,7 +22,7 @@
       "@Organisms/*": ["src/components/organisms/*"],
       "@PageContent/*": ["src/components/PageContent/*"],
       "@Requests": ["src/api/requests"],
-      "@Requests/*": ["src/api/requests/*"],
+      "@Requests/*": ["src/requests/*"],
       "@Services/*": ["src/services/*"],
       "@Stubs/*": ["src/stubs/*"],
       "@Svg/*": ["src/svg/*"],

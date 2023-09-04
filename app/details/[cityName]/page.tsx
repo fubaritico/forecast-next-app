@@ -16,14 +16,6 @@ const getObservationDetails = async ({
 }: PageContext): Promise<RequestResponse<GetDetailedForecatsResponse>> => {
   const requestParams = { ...searchParams, ...params }
 
-  const routeHandlerResponse = await fetch(
-    `http://localhost:3000/api/weatherbit/forecasts/detail/${params.cityName}`
-  )
-  console.log(
-    '[cityName]/page.tsx - routeHandlerResponse: ',
-    routeHandlerResponse
-  )
-
   try {
     const response: GetObservationDetailsAxiosResponse =
       await getObservationDetailsRequest(
